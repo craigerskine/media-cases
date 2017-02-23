@@ -1,0 +1,83 @@
+/*
+Author: Craig Erskine
+Description: Media Cases
+*/
+
+/* shelf */
+.media-shelf,.media-shelf *,.media-shelf *:before,.media-shelf *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.media-shelf,.media-shelf li { margin: 0 auto; padding: 0; max-width: 940px; list-style: none; display: block; overflow: hidden; }
+.media-shelf li { margin: 0 0 54px; width: 33.333333333%; height: 180px; float: left; position: relative; }
+.media-shelf-4 li { width: 25%; }
+.media-shelf-5 li { width: 20%; }
+.media-shelf-6 li { width: 16.666666667%; }
+.media-shelf li:after { width: 100%; height: 2px; background: rgba(255,255,255,0.1); content: ""; position: absolute; bottom: -28px; left: 0; }
+.media-shelf li:hover .media-case,.media-shelf li:focus .media-case { -webkit-transform: translate(0,-5px); transform: translate(0,-5px); }
+
+/* media */
+.media-case { display: inline-block; text-decoration: none; position: absolute; bottom: 0; left: 50%; transition: all .15s cubic-bezier(0,1,0.5,1.5); }
+
+/* 102x140 */
+.media-case { margin-left: -56px; padding: 7px 8px 7px 0; width: 110px; height: 154px; }
+/* 96x98 */
+.media-cd { padding: 2px 4px 2px 12px; width: 112px; height: 102px; }
+/* 96x152 */
+.media-cd-tl { padding: 2px 4px 2px 12px; width: 112px; height: 156px; }
+/* 106x110 */
+.media-xbone { margin-left: -55px; padding: 17px 4px 7px 0; height: 134px; }
+/* 86x126 */
+.media-switch { margin-left: -45px; padding: 4px 4px 4px 0; width: 90px; height: 134px; }
+/* 105x94 */
+.media-n3ds { margin-left: -55px; padding: 5px 5px 5px 0; height: 104px; }
+/* 102x90 */
+.media-nds { height: 104px; }
+/* 102x120 */
+.media-ps4 { margin-left: -55px; padding: 7px 8px 7px 0; height: 134px; }
+/* 106x116 */
+.media-ps3 { margin-left: -55px; padding: 14px 4px 4px 0; width: 110px; height: 134px; }
+/* 85x108 */
+.media-psv { margin-left: -45px; padding: 5px 5px 5px 0; width: 90px; height: 118px; }
+/* 84x130 */
+.media-psp { margin-left: -44px; padding: 4px 4px 4px 0; width: 88px; height: 138px; }
+
+.media-box { margin-left: -56px; padding: 0; width: 112px; height: 112px; }
+.media-box img { border-radius: 2px; }
+.media-box-wd { margin-left: -70px; width: 140px; height: 102px; }
+.media-box-md { margin-left: -51px; width: 102px; height: 120px; }
+.media-box-sm { margin-left: -51px; width: 102px; height: 102px; }
+.media-box-tl { margin-left: -51px; width: 102px; height: 140px; }
+
+.media-case img { width: 100%; height: 100%; }
+
+/* cases */
+.media-case:after { width: 100%; height: 100%; background: none no-repeat 0 0; content: ""; position: absolute; top: 0; left: 0; }
+.media-dvd:after { background-image: url(../img/media/cases/dvd.png); }
+.media-cd:after { background-image: url(../img/media/cases/cd.png); }
+.media-xbone:after { background-image: url(../img/media/cases/ms-xbone.png); }
+.media-xb360:after { background-image: url(../img/media/cases/ms-xbox360.png); }
+.media-xb:after { background-image: url(../img/media/cases/ms-xbox.png); }
+.media-switch:after { background-image: url(../img/media/cases/n-switch.png); }
+.media-wiiu:after { background-image: url(../img/media/cases/n-wiiu.png); }
+.media-wii:after { background-image: url(../img/media/cases/n-wii.png); }
+.media-n3ds:after { background-image: url(../img/media/cases/n-3ds.png); }
+.media-nds:after { background-image: url(../img/media/cases/n-ds.png); }
+.media-cd-tl:after { background-image: url(../img/media/cases/sega-cd.png); }
+.media-ps4:after { background-image: url(../img/media/cases/sony-ps4.png); }
+.media-ps3:after { background-image: url(../img/media/cases/sony-ps3.png); }
+.media-psv:after { background-image: url(../img/media/cases/sony-psv.png); }
+.media-psp:after { background-image: url(../img/media/cases/sony-psp.png); }
+
+.media-box:after { background-image: url(../img/media/cases/box.png); }
+.media-box-wd:after { background-image: url(../img/media/cases/box-wd.png); }
+.media-box-md:after { background-image: url(../img/media/cases/box-md.png); }
+.media-box-sm:after { background-image: url(../img/media/cases/box-sm.png); }
+.media-box-tl:after { background-image: url(../img/media/cases/box-tl.png); }
+
+/* tablet portrait / mobile landscape */
+@media only screen and (max-width: 767px){
+  .media-shelf li { width: 33.333333333%; }
+}
+
+/* tablet portrait / mobile landscape */
+@media only screen and (max-width: 479px){
+
+}
