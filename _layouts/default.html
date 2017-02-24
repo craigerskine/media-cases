@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Cases - By Craig Erskine</title>
+
+<!--[if gt IE 9]><!-->
+    <link rel="stylesheet" href="demo/css/main.css" />
+    <link rel="stylesheet" href="dist/css/media.css" />
+<!--<![endif]-->
+
+  </head>
+  <body>
+    <header>
+      <h1 class="heading">Media Cases</h1>
+    </header>
+    <main>
+      <section>
+        <p>HTML/CSS framework for case overlays on top of media cover art.</p>
+        <p><a href="https://github.com/craigerskine/media-cases" class="btn">Fork on GitHub</a></p>
+        <hr class="contain" />
+      </section>
+
+<!-- media -->
+      <ul class="media-shelf media-shelf-6">
+        <li tabindex="0">PS4 <a href="#" class="media-case media-ps4" title="PS4"><img src="http://placehold.it/204x240/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">PS3 <a href="#" class="media-case media-ps3" title="PS3"><img src="http://placehold.it/106x116/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">PS2 <a href="#" class="media-case media-dvd" title="PS2"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">PSone <a href="#" class="media-case media-cd" title="PSone"><img src="http://placehold.it/192x196/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">PS Vita <a href="#" class="media-case media-psv" title="Playstation Vita"><img src="http://placehold.it/170x216/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">PSP <a href="#" class="media-case media-psp" title="PSP"><img src="http://placehold.it/168x260/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Switch <a href="#" class="media-case media-switch" title="Switch"><img src="http://placehold.it/172x252/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Wii U <a href="#" class="media-case media-wiiu" title="Wii U"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Wii <a href="#" class="media-case media-wii" title="Wii"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Gamecube <a href="#" class="media-case media-dvd" title="Gamecube"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">3DS <a href="#" class="media-case media-n3ds" title="3DS"><img src="http://placehold.it/210x188/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">DS <a href="#" class="media-case media-nds" title="DS"><img src="http://placehold.it/204x180/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">XBOX ONE <a href="#" class="media-case media-xbone" title="XBOX ONE"><img src="http://placehold.it/212x220/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">XBOX 360 <a href="#" class="media-case media-xb360" title="XBOX 360"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">XBOX <a href="#" class="media-case media-xb" title="XBOX"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Dreamcast <a href="#" class="media-case media-cd" title="Dreamcast"><img src="http://placehold.it/192x196/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Sega CD/Saturn <a href="#" class="media-case media-cd-tl" title="Sega CD"><img src="http://placehold.it/192x304/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">TurboGrafx/CD <a href="#" class="media-case media-cd" title="TurboGrafx/CD"><img src="http://placehold.it/192x196/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Box <a href="#" class="media-case media-box" title="Box"><img src="http://placehold.it/224x224/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Box Wide <a href="#" class="media-case media-box media-box-wd" title="Box Wide"><img src="http://placehold.it/280x204/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Box Medium <a href="#" class="media-case media-box media-box-md" title="Box Medium"><img src="http://placehold.it/204x240/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Box Small <a href="#" class="media-case media-box media-box-sm" title="Box Small"><img src="http://placehold.it/204x204/222/CCC" alt="Cover" /></a></li>
+        <li tabindex="0">Box Tall <a href="#" class="media-case media-box media-box-tl" title="Box Tall"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a></li>
+      </ul>
+<!-- /media -->
+
+      <h2 class="heading">Usage</h2>
+      <section class="contain">
+        <p>Include the CSS:</p>
+        <pre class="pre-scroll">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/media.css&quot; /&gt;</pre>
+        <p>Sample Markup:<br /><small><b>NOTE:</b> replace <code>ps4</code> with whatever case you want (see options below)</small></p>
+        <pre class="pre-scroll">&lt;ul class=&quot;media-shelf&quot;&gt;
+  &lt;li tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;media-case media-ps4&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+      </section>
+      <h3 class="heading">Options</h3>
+      <section class="contain">
+        <h5>Popular console classes: <small>prefix with <code>media-case media-</code></small></h5>
+        <ul class="list-3 cf">
+          <li>PS4 = <code>ps4</code></li>
+          <li>PS3 = <code>ps3</code></li>
+          <li>PS2 = <code>dvd</code></li>
+          <li>PSone = <code>cd</code></li>
+          <li>PS Vita = <code>psv</code></li>
+          <li>PSP = <code>psp</code></li>
+          <li>Switch = <code>switch</code></li>
+          <li>Wii U = <code>wiiu</code></li>
+          <li>Wii = <code>wii</code></li>
+          <li>Gamecube = <code>dvd</code></li>
+          <li>3DS = <code>n3ds</code></li>
+          <li>DS = <code>nds</code></li>
+          <li>XBOX One = <code>xbone</code></li>
+          <li>XBOX 360 = <code>xb360</code></li>
+          <li>XBOX = <code>xb</code></li>
+          <li>Dreamcast = <code>cd</code></li>
+          <li>Sega CD/Saturn = <code>cd-tl</code></li>
+          <li>TurboGrafx/CD = <code>cd</code></li>
+        </ul>
+        <h5>Generic box classes: <small>prefix with <code>media-case media-box media-</code></small></h5>
+        <ul class="list-3 cf">
+          <li>Box = <code>box</code></li>
+          <li>Box Wide = <code>box-wd</code></li>
+          <li>Box Medium = <code>box-md</code></li>
+          <li>Box Small = <code>box-sm</code></li>
+          <li>Box Tall = <code>box-tl</code></li>
+        </ul>
+      </section>
+
+    </main>
+    <footer>
+      <p>Concept &amp; Design by <a href="http://craigerskine.com/">Craig Erskine</a></p>
+    </footer>
+  </body>
+</html>
