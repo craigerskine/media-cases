@@ -24,6 +24,8 @@ Description: Media Cases
 .media-cd-tl { padding: 2px 4px 2px 12px; width: 112px; height: 156px; }
 /* 106x110 */
 .media-xbone { margin-left: -55px; padding: 17px 4px 7px 0; height: 134px; }
+/* 104x140 */
+.media-wiiu { padding: 7px 6px 7px 0; width: 110px; }
 /* 86x126 */
 .media-switch { margin-left: -45px; padding: 4px 4px 4px 0; width: 90px; height: 134px; }
 /* 105x94 */
