@@ -43,6 +43,10 @@ pre.pre-scroll { max-height: 340px; overflow-y: scroll; }
 .list-3,.list-3 li { margin: 0 0 2em; padding: 0; list-style: none; display: block; }
 .list-3 li { margin: 0 0 1em; width: 33.333333333%; float: left; }
 
+/* header */
+header .heading svg { opacity: 0.75; }
+header .heading:hover svg { opacity: 1; }
+
 /* main */
 main {}
 section { padding: 0 1em; }
