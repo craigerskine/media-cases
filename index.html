@@ -6,119 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Media Cases - By Craig Erskine</title>
 
-<!--[if gt IE 9]><!-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="dist/css/demo.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/css/media.css" />
-<!--<![endif]-->
+    <style>
+      .transition { transition: all .25s; }
+    </style>
 
   </head>
-  <body>
-    <header>
-      <h1 class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="174" height="78" viewBox="0 0 174 78"><path fill="#FFF" fill-rule="evenodd" d="M138,65 L138,68 L135,68 L135,77 L138,77 L138,80 L144,80 L144,83 L135,83 L135,89 L147,89 L147,86 L150,86 L150,77 L147,77 L147,74 L141,74 L141,71 L150,71 L150,65 L138,65 Z M120,89 L132,89 L132,83 L123,83 L123,80 L132,80 L132,74 L123,74 L123,71 L132,71 L132,65 L120,65 L120,68 L117,68 L117,86 L120,86 L120,89 Z M102,65 L102,68 L99,68 L99,77 L102,77 L102,80 L108,80 L108,83 L99,83 L99,89 L111,89 L111,86 L114,86 L114,77 L111,77 L111,74 L105,74 L105,71 L114,71 L114,65 L102,65 Z M87,89 L81,89 L81,68 L84,68 L84,65 L93,65 L93,68 L96,68 L96,89 L90,89 L90,83 L87,83 L87,89 Z M87,71 L87,77 L90,77 L90,71 L87,71 Z M66,65 L66,68 L63,68 L63,86 L66,86 L66,89 L75,89 L75,86 L78,86 L78,80 L72,80 L72,83 L69,83 L69,71 L72,71 L72,74 L78,74 L78,68 L75,68 L75,65 L66,65 Z M219,59 L207,59 L207,17 L213,17 L213,11 L231,11 L231,17 L237,17 L237,59 L225,59 L225,47 L219,47 L219,59 Z M219,23 L219,35 L225,35 L225,23 L219,23 Z M201,59 L201,11 L189,11 L189,59 L201,59 Z M177,11 L177,17 L183,17 L183,53 L177,53 L177,59 L153,59 L153,11 L177,11 Z M171,47 L171,23 L165,23 L165,47 L171,47 Z M123,59 L147,59 L147,47 L129,47 L129,41 L147,41 L147,29 L129,29 L129,23 L147,23 L147,11 L123,11 L123,17 L117,17 L117,53 L123,53 L123,59 Z M75,59 L75,23 L81,23 L81,59 L93,59 L93,23 L99,23 L99,59 L111,59 L111,17 L105,17 L105,11 L63,11 L63,59 L75,59 Z" transform="translate(-63 -11)"/></svg></h1>
+  <body class="bg-gray-900 text-gray-500">
+    <header class="py-8 px-4 text-center md:text-left md:flex items-center justify-center">
+      <a href="https://github.com/craigerskine/media-cases" class="mb-4 md:mb-0 text-grey-500 hover:text-white focus:text-white inline-block transition"><svg xmlns="http://www.w3.org/2000/svg" width="174" height="78" viewBox="0 0 174 78" class="fill-current inline-block"><path fill-rule="evenodd" d="M138,65 L138,68 L135,68 L135,77 L138,77 L138,80 L144,80 L144,83 L135,83 L135,89 L147,89 L147,86 L150,86 L150,77 L147,77 L147,74 L141,74 L141,71 L150,71 L150,65 L138,65 Z M120,89 L132,89 L132,83 L123,83 L123,80 L132,80 L132,74 L123,74 L123,71 L132,71 L132,65 L120,65 L120,68 L117,68 L117,86 L120,86 L120,89 Z M102,65 L102,68 L99,68 L99,77 L102,77 L102,80 L108,80 L108,83 L99,83 L99,89 L111,89 L111,86 L114,86 L114,77 L111,77 L111,74 L105,74 L105,71 L114,71 L114,65 L102,65 Z M87,89 L81,89 L81,68 L84,68 L84,65 L93,65 L93,68 L96,68 L96,89 L90,89 L90,83 L87,83 L87,89 Z M87,71 L87,77 L90,77 L90,71 L87,71 Z M66,65 L66,68 L63,68 L63,86 L66,86 L66,89 L75,89 L75,86 L78,86 L78,80 L72,80 L72,83 L69,83 L69,71 L72,71 L72,74 L78,74 L78,68 L75,68 L75,65 L66,65 Z M219,59 L207,59 L207,17 L213,17 L213,11 L231,11 L231,17 L237,17 L237,59 L225,59 L225,47 L219,47 L219,59 Z M219,23 L219,35 L225,35 L225,23 L219,23 Z M201,59 L201,11 L189,11 L189,59 L201,59 Z M177,11 L177,17 L183,17 L183,53 L177,53 L177,59 L153,59 L153,11 L177,11 Z M171,47 L171,23 L165,23 L165,47 L171,47 Z M123,59 L147,59 L147,47 L129,47 L129,41 L147,41 L147,29 L129,29 L129,23 L147,23 L147,11 L123,11 L123,17 L117,17 L117,53 L123,53 L123,59 Z M75,59 L75,23 L81,23 L81,59 L93,59 L93,23 L99,23 L99,59 L111,59 L111,17 L105,17 L105,11 L63,11 L63,59 L75,59 Z" transform="translate(-63 -11)"/></svg></a>
+      <div class="md:pl-32">
+        <p class="mb-4 text-gray-700 text-sm md:text-base">HTML/CSS framework for case overlays on top of media cover art.</p>
+        <a href="https://github.com/craigerskine/media-cases" class="border-t border-orange-300 px-8 py-2 bg-orange-500 text-white hover:border-orange-400 focus:border-orange-400 hover:bg-orange-600 focus:bg-orange-600 font-bold uppercase inline-block rounded shadow transition">Download <i class="fa fa-fw fa-lg fa-github" aria-label="On GitHub"></i></a>
+      </div>
     </header>
-    <main>
-      <section class="contain">
-        <p>HTML/CSS framework for case overlays on top of media cover art.</p>
-        <p><a href="https://github.com/craigerskine/media-cases" class="btn">Download <i class="fa fa-fw fa-github" aria-label="On GitHub"></i></a></p>
-        <hr />
-      </section>
+    <main class="bg-gray-800">
 
-      <section class="contain">
+      <section class="mx-auto py-8 container">
 <!-- media -->
-        <ul class="media-shelf media-shelf-md">
-          <li tabindex="0"><a href="#" class="media-case media-ps4" title="PS4"><img src="http://placehold.it/204x240/222/CCC" alt="Cover" /></a><br />PS4</li>
-          <li tabindex="0"><a href="#" class="media-case media-ps3" title="PS3"><img src="http://placehold.it/106x116/222/CCC" alt="Cover" /></a><br />PS3</li>
-          <li tabindex="0"><a href="#" class="media-case media-dvd" title="PS2"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a><br />PS2</li>
-          <li tabindex="0"><a href="#" class="media-case media-cd" title="PSone"><img src="http://placehold.it/192x196/222/CCC" alt="Cover" /></a><br />PSone</li>
-          <li tabindex="0"><a href="#" class="media-case media-psv" title="Playstation Vita"><img src="http://placehold.it/170x216/222/CCC" alt="Cover" /></a><br />PS Vita</li>
-          <li tabindex="0"><a href="#" class="media-case media-psp" title="PSP"><img src="http://placehold.it/168x260/222/CCC" alt="Cover" /></a><br />PSP</li>
-        </ul>
-        <ul class="media-shelf media-shelf-md">
-          <li tabindex="0"><a href="#" class="media-case media-switch" title="Switch"><img src="http://placehold.it/172x252/222/CCC" alt="Cover" /></a><br />Switch</li>
-          <li tabindex="0"><a href="#" class="media-case media-wiiu" title="Wii U"><img src="http://placehold.it/208x280/222/CCC" alt="Cover" /></a><br />Wii U</li>
-          <li tabindex="0"><a href="#" class="media-case media-wii" title="Wii"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a><br />Wii</li>
-          <li tabindex="0"><a href="#" class="media-case media-dvd" title="Gamecube"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a><br />Gamecube</li>
-          <li tabindex="0"><a href="#" class="media-case media-n3ds" title="3DS"><img src="http://placehold.it/210x188/222/CCC" alt="Cover" /></a><br />3DS</li>
-          <li tabindex="0"><a href="#" class="media-case media-nds" title="DS"><img src="http://placehold.it/204x180/222/CCC" alt="Cover" /></a><br />DS</li>
-        </ul>
-        <ul class="media-shelf media-shelf-md">
-          <li tabindex="0"><a href="#" class="media-case media-xbone" title="XBOX ONE"><img src="http://placehold.it/212x220/222/CCC" alt="Cover" /></a><br />XBOX ONE</li>
-          <li tabindex="0"><a href="#" class="media-case media-xb360" title="XBOX 360"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a><br />XBOX 360</li>
-          <li tabindex="0"><a href="#" class="media-case media-xb" title="XBOX"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a><br />XBOX</li>
-          <li tabindex="0"><a href="#" class="media-case media-cd" title="Dreamcast"><img src="http://placehold.it/192x196/222/CCC" alt="Cover" /></a><br />Dreamcast</li>
-          <li tabindex="0"><a href="#" class="media-case media-cd-tl" title="Sega CD"><img src="http://placehold.it/192x304/222/CCC" alt="Cover" /></a><br />Sega CD/Saturn</li>
-          <li tabindex="0"><a href="#" class="media-case media-cd" title="TurboGrafx/CD"><img src="http://placehold.it/192x196/222/CCC" alt="Cover" /></a><br />TurboGrafx/CD</li>
-        </ul>
-        <ul class="media-shelf media-shelf-md">
-          <li tabindex="0"><a href="#" class="media-case media-box" title="Box"><img src="http://placehold.it/224x224/222/CCC" alt="Cover" /></a><br />Box</li>
-          <li tabindex="0"><a href="#" class="media-case media-box media-box-wd" title="Box Wide"><img src="http://placehold.it/280x204/222/CCC" alt="Cover" /></a><br />Box Wide</li>
-          <li tabindex="0"><a href="#" class="media-case media-box media-box-md" title="Box Medium"><img src="http://placehold.it/204x240/222/CCC" alt="Cover" /></a><br />Box Medium</li>
-          <li tabindex="0"><a href="#" class="media-case media-box media-box-sm" title="Box Small"><img src="http://placehold.it/204x204/222/CCC" alt="Cover" /></a><br />Box Small</li>
-          <li tabindex="0"><a href="#" class="media-case media-box media-box-tl" title="Box Tall"><img src="http://placehold.it/204x280/222/CCC" alt="Cover" /></a><br />Box Tall</li>
+        <ul class="flex flex-wrap items-end text-center">
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-ps4" title="PS4"><img src="holder.js/204x240?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="PS4 Cover" /></a><small class="block">PS4</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-ps3" title="PS3"><img src="holder.js/212x232?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="PS3 Cover" /></a><small class="block">PS3</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-dvd" title="PS2"><img src="holder.js/204x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="PS2 Cover" /></a><small class="block">PS2</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-cd" title="PSone"><img src="holder.js/192x196?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="PSone Cover" /></a><small class="block">PSone</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-psv" title="Playstation Vita"><img src="holder.js/170x216?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="PS Vita Cover" /></a><small class="block">PS Vita</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-psp" title="PSP"><img src="holder.js/168x260?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="PSP Cover" /></a><small class="block">PSP</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-switch" title="Switch"><img src="holder.js/172x252?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Switch Cover" /></a><small class="block">Switch</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-wiiu" title="Wii U"><img src="holder.js/208x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Wii U Cover" /></a><small class="block">Wii U</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-wii" title="Wii"><img src="holder.js/204x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Wii Cover" /></a><small class="block">Wii</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-dvd" title="Gamecube"><img src="holder.js/204x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Gamecube Cover" /></a><small class="block">Gamecube</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-n3ds" title="3DS"><img src="holder.js/210x188?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="3DS Cover" /></a><small class="block">3DS</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-nds" title="DS"><img src="holder.js/204x180?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="DS Cover" /></a><small class="block">DS</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-xbone" title="XBOX ONE"><img src="holder.js/212x220?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="XBOX ONE Cover" /></a><small class="block">XBOX ONE</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-xb360" title="XBOX 360"><img src="holder.js/204x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="XBOX 360 Cover" /></a><small class="block">XBOX 360</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-xb" title="XBOX"><img src="holder.js/204x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="XBOX Cover" /></a><small class="block">XBOX</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-cd" title="Dreamcast"><img src="holder.js/192x196?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Dreamcast Cover" /></a><small class="block">Dreamcast</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-cd-tl" title="Sega CD"><img src="holder.js/192x304?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Sega CD/Saturn Cover" /></a><small class="block">Sega CD/Saturn</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-cd" title="TurboGrafx/CD"><img src="holder.js/192x196?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="TurboGrafx/CD Cover" /></a><small class="block">TurboGrafx/CD</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-box" title="Box"><img src="holder.js/224x224?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Box Cover" /></a><small class="block">Box</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-box media-box-wd" title="Box Wide"><img src="holder.js/280x204?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Box Wide Cover" /></a><small class="block">Box Wide</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-box media-box-md" title="Box Medium"><img src="holder.js/204x240?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Box Medium Cover" /></a><small class="block">Box Medium</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-box media-box-sm" title="Box Small"><img src="holder.js/204x204?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Box Small Cover" /></a><small class="block">Box Small</small></li>
+          <li class="mb-8 w-1/3 md:w-1/6"><a href="#" class="media-case media-box media-box-tl" title="Box Tall"><img src="holder.js/204x280?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18" alt="Box Tall Cover" /></a><small class="block">Box Tall</small></li>
         </ul>
 <!-- /media -->
       </section>
 
-      <h2 class="heading">Usage</h2>
-      <section class="contain">
-        <p>Include the CSS:</p>
-        <pre class="pre-scroll">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/media.css&quot; /&gt;</pre>
-        <p>Sample Markup:<br /><small><b>NOTE:</b> replace <code>ps4</code> with whatever case you want (see options below)</small></p>
-        <pre class="pre-scroll">&lt;ul class=&quot;media-shelf&quot;&gt;
-  &lt;li tabindex=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;media-case media-ps4&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+      <h2 class="p-8 bg-gray-900 text-gray-700 text-2xl uppercase text-center">Usage</h2>
+      <section class="mx-auto p-8 container">
+        <p class="mb-2">Include the CSS:</p>
+        <pre class="mb-4 p-4 bg-black text-orange-600 overflow-y-scroll opacity-75 rounded shadow">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/media.css&quot; /&gt;</pre>
+        <p class="mb-2">Sample Markup:<br /><small><b>NOTE:</b> replace <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">ps4</code> with whatever case you want (see options below). Also, you can use your own CSS to style the overall layout, in the above demo I used <a href="https://tailwindcss.com/" class="text-gray-400 hover:text-white focus:text-white transition">Tailwind CSS</a></small>.</p>
+        <pre class="mb-4 p-4 bg-black text-orange-600 overflow-y-scroll opacity-75 rounded shadow">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;media-case media-ps4&quot;&gt;&lt;img src=&quot;...&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
   ...
 &lt;/ul&gt;</pre>
       </section>
-      <h3 class="heading">Options</h3>
-      <section class="contain">
-        <h5>Popular console classes: <small>prefix with <code>media-case media-</code></small></h5>
-        <ul class="list-3 cf">
-          <li>PS4 = <code>ps4</code></li>
-          <li>PS3 = <code>ps3</code></li>
-          <li>PS2 = <code>dvd</code></li>
-          <li>PSone = <code>cd</code></li>
-          <li>PS Vita = <code>psv</code></li>
-          <li>PSP = <code>psp</code></li>
-          <li>Switch = <code>switch</code></li>
-          <li>Wii U = <code>wiiu</code></li>
-          <li>Wii = <code>wii</code></li>
-          <li>Gamecube = <code>dvd</code></li>
-          <li>3DS = <code>n3ds</code></li>
-          <li>DS = <code>nds</code></li>
-          <li>XBOX One = <code>xbone</code></li>
-          <li>XBOX 360 = <code>xb360</code></li>
-          <li>XBOX = <code>xb</code></li>
-          <li>Dreamcast = <code>cd</code></li>
-          <li>Sega CD/Saturn = <code>cd-tl</code></li>
-          <li>TurboGrafx/CD = <code>cd</code></li>
+      <h3 class="p-8 bg-gray-900 text-gray-700 text-2xl uppercase text-center">Options</h3>
+      <section class="mx-auto p-8 container text-center">
+        <h5 class="mx-auto mb-4 p-2 max-w-lg bg-gray-700 rounded shadow">Popular console classes: <small class="block font-mono">prefix with <code class="px-1 py-px bg-gray-800 text-white inline-block rounded-sm">media-case media-</code></small></h5>
+        <ul class="mb-8 flex flex-wrap text-left md:text-center">
+          <li class="mb-2 w-1/2 md:w-1/3">PS4 = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">ps4</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">PS3 = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">ps3</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">PS2 = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">dvd</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">PSone = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">cd</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">PS Vita = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">psv</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">PSP = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">psp</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Switch = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">switch</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Wii U = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">wiiu</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Wii = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">wii</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Gamecube = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">dvd</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">3DS = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">n3ds</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">DS = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">nds</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">XBOX One = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">xbone</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">XBOX 360 = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">xb360</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">XBOX = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">xb</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Dreamcast = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">cd</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Sega CD/Saturn = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">cd-tl</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">TurboGrafx/CD = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">cd</code></li>
         </ul>
-        <h5>Generic box classes: <small>prefix with <code>media-case media-box media-</code></small></h5>
-        <ul class="list-3 cf">
-          <li>Box = <code>box</code></li>
-          <li>Box Wide = <code>box-wd</code></li>
-          <li>Box Medium = <code>box-md</code></li>
-          <li>Box Small = <code>box-sm</code></li>
-          <li>Box Tall = <code>box-tl</code></li>
+        <h5 class="mx-auto mb-4 p-2 max-w-lg bg-gray-700 rounded shadow">Generic box classes: <small class="block font-mono">prefix with <code class="px-1 py-px bg-gray-800 text-white inline-block rounded-sm">media-case media-box media-</code></small></h5>
+        <ul class="flex flex-wrap text-left md:text-center">
+          <li class="mb-2 w-1/2 md:w-1/3">Box = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">box</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Box Wide = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">box-wd</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Box Medium = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">box-md</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Box Small = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">box-sm</code></li>
+          <li class="mb-2 w-1/2 md:w-1/3">Box Tall = <code class="px-1 py-px bg-black text-orange-600 font-mono inline-block opacity-75 rounded-sm shadow">box-tl</code></li>
         </ul>
       </section>
 
     </main>
-    <footer>
-      <p>Concept &amp; Design by <a href="http://craigerskine.com/">Craig Erskine</a></p>
+    <footer class="p-8 bg-gray-900 text-gray-700 text-sm text-center">
+      <p>Concept &amp; Design by <a href="http://craigerskine.com/" class="text-gray-500 hover:text-white focus:text-white transition">Craig Erskine</a></p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      $(function(){
-        // let's remember to help keyboard-only users too
-        $('.media-shelf > li').on('focus', function(){
-          $('.media-shelf .media-case').attr('tabindex', '-1');
-          $(this).attr('tabindex', '-1').find('.media-case').focus();
-        }).on('blur', function(){
-          $('.media-shelf > li').not(this).attr('tabindex', '0');
-        });
-      });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
+
   </body>
 </html>

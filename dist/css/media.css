@@ -3,14 +3,9 @@ Author: Craig Erskine
 Description: Media Cases
 */
 
-/* shelf */
-.media-shelf,.media-shelf *,.media-shelf *:before,.media-shelf *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-.media-shelf { padding: 0; width: 100%; list-style: none; display: table; table-layout: fixed; }
-.media-shelf > li { margin: 0; padding: 0 0 10px; list-style: none; display: table-cell; vertical-align: bottom; outline: none; }
-.media-shelf > li:hover .media-case,.media-shelf > li:focus .media-case,.media-shelf .media-case:hover,.media-shelf .media-case:focus { -webkit-transform: translate(0,-5px); transform: translate(0,-5px); }
-
 /* media */
-.media-case { margin: 0 0 10px; display: inline-block; text-decoration: none; position: relative; transition: all .15s cubic-bezier(0,1,0.5,1.5); }
+.media-case { display: inline-block; text-decoration: none; position: relative; transition: all .15s cubic-bezier(0,1,0.5,1.5); }
+.media-case:hover,.media-case:focus { transform: translate(0, -8px); }
 .media-case img { width: 100%; height: 100%; }
 
 /* 102x140 */
@@ -69,18 +64,3 @@ Description: Media Cases
 .media-box-md:after { background-image: url(../img/media/cases/box-md.png); }
 .media-box-sm:after { background-image: url(../img/media/cases/box-sm.png); }
 .media-box-tl:after { background-image: url(../img/media/cases/box-tl.png); }
-
-/* tablet landscape */
-@media only screen and (max-width: 979px){
-  .media-shelf-lg > li { width: auto; display: block; }
-}
-
-/* tablet portrait / mobile landscape */
-@media only screen and (max-width: 767px){
-  .media-shelf-md > li { width: auto; display: block; }
-}
-
-/* mobile portrait */
-@media only screen and (max-width: 479px){
-  .media-shelf-sm > li { width: auto; display: block; }
-}
