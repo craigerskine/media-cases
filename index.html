@@ -86,8 +86,7 @@
 
     <script>
       // data
-      var builder = new Vue({
-        el: '.ui',
+      Vue.createApp({
         data: {
           cases: [
             { title: 'PS4', slug: 'ps4', width: '204', height: '240' },
@@ -115,7 +114,7 @@
             { title: 'Box Tall', slug: 'box-tl', width: '204', height: '280' }
           ],
         }
-      });
+      }).mount('.ui');;
 
       twind.setup({
         mode: "silent",
