@@ -87,32 +87,34 @@
     <script>
       // data
       Vue.createApp({
-        data: {
-          cases: [
-            { title: 'PS4', slug: 'ps4', width: '204', height: '240' },
-            { title: 'PS3', slug: 'ps3', width: '212', height: '232' },
-            { title: 'PS2', slug: 'dvd', width: '204', height: '280' },
-            { title: 'PSone', slug: 'cd', width: '192', height: '196' },
-            { title: 'PS Vita', slug: 'psv', width: '170', height: '216' },
-            { title: 'PSP', slug: 'psp', width: '168', height: '260' },
-            { title: 'Switch', slug: 'switch', width: '172', height: '252' },
-            { title: 'Wii U', slug: 'wiiu', width: '208', height: '280' },
-            { title: 'Wii', slug: 'wii', width: '204', height: '280' },
-            { title: 'Gamecube', slug: 'dvd', width: '204', height: '280' },
-            { title: '3DS', slug: 'n3ds', width: '210', height: '168' },
-            { title: 'DS', slug: 'nds', width: '204', height: '180' },
-            { title: 'XBOX ONE', slug: 'xbone', width: '212', height: '220' },
-            { title: 'XBOX 360', slug: 'xb360', width: '204', height: '280' },
-            { title: 'XBOX', slug: 'xb', width: '204', height: '280' },
-            { title: 'Dreamcast', slug: 'cd', width: '192', height: '196' },
-            { title: 'Sega CD/Saturn', slug: 'cd-tl', width: '192', height: '304' },
-            { title: 'TurboGrafx/CD', slug: 'cd', width: '192', height: '196' },
-            { title: 'Box', slug: 'box', width: '224', height: '224' },
-            { title: 'Box Wide', slug: 'box-wd', width: '280', height: '204' },
-            { title: 'Box Medium', slug: 'box-md', width: '204', height: '240' },
-            { title: 'Box Small', slug: 'box-sm', width: '204', height: '204' },
-            { title: 'Box Tall', slug: 'box-tl', width: '204', height: '280' }
-          ],
+        data() {
+          return {
+            cases: [
+              { title: 'PS4', slug: 'ps4', width: '204', height: '240' },
+              { title: 'PS3', slug: 'ps3', width: '212', height: '232' },
+              { title: 'PS2', slug: 'dvd', width: '204', height: '280' },
+              { title: 'PSone', slug: 'cd', width: '192', height: '196' },
+              { title: 'PS Vita', slug: 'psv', width: '170', height: '216' },
+              { title: 'PSP', slug: 'psp', width: '168', height: '260' },
+              { title: 'Switch', slug: 'switch', width: '172', height: '252' },
+              { title: 'Wii U', slug: 'wiiu', width: '208', height: '280' },
+              { title: 'Wii', slug: 'wii', width: '204', height: '280' },
+              { title: 'Gamecube', slug: 'dvd', width: '204', height: '280' },
+              { title: '3DS', slug: 'n3ds', width: '210', height: '168' },
+              { title: 'DS', slug: 'nds', width: '204', height: '180' },
+              { title: 'XBOX ONE', slug: 'xbone', width: '212', height: '220' },
+              { title: 'XBOX 360', slug: 'xb360', width: '204', height: '280' },
+              { title: 'XBOX', slug: 'xb', width: '204', height: '280' },
+              { title: 'Dreamcast', slug: 'cd', width: '192', height: '196' },
+              { title: 'Sega CD/Saturn', slug: 'cd-tl', width: '192', height: '304' },
+              { title: 'TurboGrafx/CD', slug: 'cd', width: '192', height: '196' },
+              { title: 'Box', slug: 'box', width: '224', height: '224' },
+              { title: 'Box Wide', slug: 'box-wd', width: '280', height: '204' },
+              { title: 'Box Medium', slug: 'box-md', width: '204', height: '240' },
+              { title: 'Box Small', slug: 'box-sm', width: '204', height: '204' },
+              { title: 'Box Tall', slug: 'box-tl', width: '204', height: '280' }
+            ],
+          }
         }
       }).mount('.ui');;
 
