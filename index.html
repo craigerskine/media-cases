@@ -30,10 +30,13 @@
 <!-- media -->
         <ul class="ui flex flex-wrap items-end text-center" v-cloak>
           <li v-for="(value, index) in cases" class="mb-8 w-1/3 md:w-1/6">
-            <a href="#" :class="'media-case media-'+ value.slug +' shadow-lg rounded-sm'" :title="value.title">
+            <a href="#" :class="['media-'+ value.slug[0], 'media-case shadow-lg rounded-sm']" :title="value.title">
               <img :src="'holder.js/'+ value.width +'x'+ value.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="value.title +' Cover'" />
             </a>
-            <small class="block">{{value.title}} <code class="mx-1 px-1 py-px bg-black text-yellow-600 font-mono inline-block opacity-75 rounded-sm shadow">{{value.slug }}</code></small>
+            <small class="block">
+              {{value.title}}
+              <code v-for="i in value.slug" class="mx-1 px-1 py-px bg-black text-yellow-600 font-mono inline-block opacity-75 rounded-sm shadow">{{ i }}</code>
+            </small>
           </li>
         </ul>
 <!-- /media -->
@@ -51,7 +54,7 @@
             <i class="w-10 h-10 ring(1 white opacity-10) not-italic flex-none flex items-center justify-center rounded-full">1</i>
             <div class="pl-5 min-w-0 flex-1">
               <h4 class="mb-2 font-bold">Include the CSS:</h4>
-              <div class="mb-4 p-4 w-full bg-black text-yellow-600 block overflow-auto opacity-75 rounded shadow">
+              <div class="mb-4 p-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
                 <pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/media.css&quot; /&gt;</pre>
               </div>
             </div>
@@ -60,7 +63,7 @@
             <i class="w-10 h-10 ring(1 white opacity-10) not-italic flex-none flex items-center justify-center rounded-full">2</i>
             <div class="pl-5 min-w-0 flex-1">
               <h4 class="mb-2 font-bold">Sample Markup: <small class="font-normal block"><b>NOTE:</b> replace <code class="px-1 py-px bg-black text-yellow-400 font-mono inline-block opacity-75 rounded-sm shadow">ps4</code> with whatever case you want and <code class="px-1 py-px bg-black text-yellow-400 font-mono inline-block opacity-75 rounded-sm shadow">cover-art.jpg</code> with the path to your own hosted cover artwork. <br /> Also, you can use your own CSS to style the overall layout, in the above demo I used <a href="https://twind.dev/" class="text-gray-400 hover:text-white focus:text-white transition duration-300">Twind</a>.</small></h4>
-              <div class="mb-4 p-4 w-full bg-black text-yellow-600 block overflow-auto opacity-75 rounded shadow">
+              <div class="mb-4 p-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
                 <pre>&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;media-case media-<b class="text-yellow-400">ps4</b>&quot;&gt;&lt;img src=&quot;<b class="text-yellow-400">cover-art.jpg</b>&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
   ...
@@ -90,29 +93,29 @@
         data() {
           return {
             cases: [
-              { title: 'PS4', slug: 'ps4', width: '204', height: '240' },
-              { title: 'PS3', slug: 'ps3', width: '212', height: '232' },
-              { title: 'PS2', slug: 'dvd', width: '204', height: '280' },
-              { title: 'PSone', slug: 'cd', width: '192', height: '196' },
-              { title: 'PS Vita', slug: 'psv', width: '170', height: '216' },
-              { title: 'PSP', slug: 'psp', width: '168', height: '260' },
-              { title: 'Switch', slug: 'switch', width: '172', height: '252' },
-              { title: 'Wii U', slug: 'wiiu', width: '208', height: '280' },
-              { title: 'Wii', slug: 'wii', width: '204', height: '280' },
-              { title: 'Gamecube', slug: 'dvd', width: '204', height: '280' },
-              { title: '3DS', slug: 'n3ds', width: '210', height: '168' },
-              { title: 'DS', slug: 'nds', width: '204', height: '180' },
-              { title: 'XBOX ONE', slug: 'xbone', width: '212', height: '220' },
-              { title: 'XBOX 360', slug: 'xb360', width: '204', height: '280' },
-              { title: 'XBOX', slug: 'xb', width: '204', height: '280' },
-              { title: 'Dreamcast', slug: 'cd', width: '192', height: '196' },
-              { title: 'Sega CD/Saturn', slug: 'cd-tl', width: '192', height: '304' },
-              { title: 'TurboGrafx/CD', slug: 'cd', width: '192', height: '196' },
-              { title: 'Box', slug: 'box', width: '224', height: '224' },
-              { title: 'Box Wide', slug: 'box-wd', width: '280', height: '204' },
-              { title: 'Box Medium', slug: 'box-md', width: '204', height: '240' },
-              { title: 'Box Small', slug: 'box-sm', width: '204', height: '204' },
-              { title: 'Box Tall', slug: 'box-tl', width: '204', height: '280' }
+              { title: 'PS5/4', slug: ['ps5', 'ps4'], width: '204', height: '240' },
+              { title: 'PS3', slug: ['ps3'], width: '212', height: '232' },
+              { title: 'PS2', slug: ['dvd'], width: '204', height: '280' },
+              { title: 'PSone', slug: ['cd'], width: '192', height: '196' },
+              { title: 'PS Vita', slug: ['psv'], width: '170', height: '216' },
+              { title: 'PSP', slug: ['psp'], width: '168', height: '260' },
+              { title: 'Switch', slug: ['switch'], width: '172', height: '252' },
+              { title: 'Wii U', slug: ['wiiu'], width: '208', height: '280' },
+              { title: 'Wii', slug: ['wii'], width: '204', height: '280' },
+              { title: 'Gamecube', slug: ['dvd'], width: '204', height: '280' },
+              { title: '3DS', slug: ['n3ds'], width: '210', height: '168' },
+              { title: 'DS', slug: ['nds'], width: '204', height: '180' },
+              { title: 'XBOX X/ONE', slug: ['xboxx', 'xbone'], width: '212', height: '220' },
+              { title: 'XBOX 360', slug: ['xb360'], width: '204', height: '280' },
+              { title: 'XBOX', slug: ['xb'], width: '204', height: '280' },
+              { title: 'Dreamcast', slug: ['cd'], width: '192', height: '196' },
+              { title: 'Sega CD/Saturn', slug: ['cd-tl'], width: '192', height: '304' },
+              { title: 'TurboGrafx/CD', slug: ['cd'], width: '192', height: '196' },
+              { title: 'Box', slug: ['box'], width: '224', height: '224' },
+              { title: 'Box Wide', slug: ['box-wd'], width: '280', height: '204' },
+              { title: 'Box Medium', slug: ['box-md'], width: '204', height: '240' },
+              { title: 'Box Small', slug: ['box-sm'], width: '204', height: '204' },
+              { title: 'Box Tall', slug: ['box-tl'], width: '204', height: '280' }
             ],
           }
         }
