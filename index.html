@@ -1,146 +1,232 @@
 <!doctype html>
-<html lang="en" hidden>
+<html lang="en" class="bg-transparent antialiased" x-data="app">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Media Cases - By Craig Erskine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=overlays-content" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href="dist/css/media.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.css" />
+    <style data-twind></style>
   </head>
-  <body class="bg-gray-900 text-gray-500">
-    <header class="py-8 px-4 text-center md:text-left md:flex items-center justify-center">
-      <a href="https://github.com/craigerskine/media-cases" class="mb-4 md:mb-0 text-gray-500 hover:text-white focus:text-white inline-block transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="174" height="78" viewBox="0 0 174 78" class="fill-current inline-block" role="img"><path fill-rule="evenodd" d="M138,65 L138,68 L135,68 L135,77 L138,77 L138,80 L144,80 L144,83 L135,83 L135,89 L147,89 L147,86 L150,86 L150,77 L147,77 L147,74 L141,74 L141,71 L150,71 L150,65 L138,65 Z M120,89 L132,89 L132,83 L123,83 L123,80 L132,80 L132,74 L123,74 L123,71 L132,71 L132,65 L120,65 L120,68 L117,68 L117,86 L120,86 L120,89 Z M102,65 L102,68 L99,68 L99,77 L102,77 L102,80 L108,80 L108,83 L99,83 L99,89 L111,89 L111,86 L114,86 L114,77 L111,77 L111,74 L105,74 L105,71 L114,71 L114,65 L102,65 Z M87,89 L81,89 L81,68 L84,68 L84,65 L93,65 L93,68 L96,68 L96,89 L90,89 L90,83 L87,83 L87,89 Z M87,71 L87,77 L90,77 L90,71 L87,71 Z M66,65 L66,68 L63,68 L63,86 L66,86 L66,89 L75,89 L75,86 L78,86 L78,80 L72,80 L72,83 L69,83 L69,71 L72,71 L72,74 L78,74 L78,68 L75,68 L75,65 L66,65 Z M219,59 L207,59 L207,17 L213,17 L213,11 L231,11 L231,17 L237,17 L237,59 L225,59 L225,47 L219,47 L219,59 Z M219,23 L219,35 L225,35 L225,23 L219,23 Z M201,59 L201,11 L189,11 L189,59 L201,59 Z M177,11 L177,17 L183,17 L183,53 L177,53 L177,59 L153,59 L153,11 L177,11 Z M171,47 L171,23 L165,23 L165,47 L171,47 Z M123,59 L147,59 L147,47 L129,47 L129,41 L147,41 L147,29 L129,29 L129,23 L147,23 L147,11 L123,11 L123,17 L117,17 L117,53 L123,53 L123,59 Z M75,59 L75,23 L81,23 L81,59 L93,59 L93,23 L99,23 L99,59 L111,59 L111,17 L105,17 L105,11 L63,11 L63,59 L75,59 Z" transform="translate(-63 -11)"/></svg></a>
-      <div class="md:pl-32">
-        <p class="mb-4 text-gray-700 text-sm md:text-base">HTML/CSS framework for case overlays on top of media cover art.</p>
-        <a href="https://github.com/craigerskine/media-cases" class="border(t yellow-300) px-8 py-2 bg-yellow-500 text-white hover:(border-yellow-400 bg-yellow-600) focus:(border-yellow-400 bg-yellow-600) font-bold uppercase inline-flex items-center rounded shadow transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100" viewBox="0 0 150 24" role="img">
-            <title>Download</title>
-            <path fill="currentColor" d="M12,0 L0,0 L0,24 L12,24 L12,21 L15,21 L15,3 L12,3 L12,0 Z M9,18 L6,18 L6,6 L9,6 L9,18 Z M21,24 L30,24 L30,21 L33,21 L33,3 L30,3 L30,0 L21,0 L21,3 L18,3 L18,21 L21,21 L21,24 Z M24,6 L27,6 L27,18 L24,18 L24,6 Z M54,0 L54,18 L51,18 L51,0 L45,0 L45,18 L42,18 L42,0 L36,0 L36,24 L54,24 L54,21 L57,21 L57,18 L60,18 L60,0 L54,0 Z M75,0 L63,0 L63,24 L69,24 L69,6 L72,6 L72,24 L78,24 L78,3 L75,3 L75,0 Z M87,18 L87,0 L81,0 L81,21 L84,21 L84,24 L96,24 L96,18 L87,18 Z M102,24 L111,24 L111,21 L114,21 L114,3 L111,3 L111,0 L102,0 L102,3 L99,3 L99,21 L102,21 L102,24 Z M105,6 L108,6 L108,18 L105,18 L105,6 Z M123,24 L123,18 L126,18 L126,24 L132,24 L132,3 L129,3 L129,0 L120,0 L120,3 L117,3 L117,24 L123,24 Z M123,6 L126,6 L126,12 L123,12 L123,6 Z M147,0 L135,0 L135,24 L147,24 L147,21 L150,21 L150,3 L147,3 L147,0 Z M144,18 L141,18 L141,6 L144,6 L144,18 Z"/>
+  <body class="bg-gray-900 text-gray-500 !block" style="display: none;">
+    <div class="w-full min-h-screen flex-(& col)" x-cloak>
+      <header class="py-8 px-4 text-center shrink-0 md:(text-left flex items-center justify-center)">
+        <a href="https://github.com/craigerskine/media-cases" class="mb-4 md:mb-0 text-gray-500 hover:text-white inline-block transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="174" height="78" viewBox="0 0 174 78" class="fill-current inline-block" role="img"><path fill-rule="evenodd" d="M138,65 L138,68 L135,68 L135,77 L138,77 L138,80 L144,80 L144,83 L135,83 L135,89 L147,89 L147,86 L150,86 L150,77 L147,77 L147,74 L141,74 L141,71 L150,71 L150,65 L138,65 Z M120,89 L132,89 L132,83 L123,83 L123,80 L132,80 L132,74 L123,74 L123,71 L132,71 L132,65 L120,65 L120,68 L117,68 L117,86 L120,86 L120,89 Z M102,65 L102,68 L99,68 L99,77 L102,77 L102,80 L108,80 L108,83 L99,83 L99,89 L111,89 L111,86 L114,86 L114,77 L111,77 L111,74 L105,74 L105,71 L114,71 L114,65 L102,65 Z M87,89 L81,89 L81,68 L84,68 L84,65 L93,65 L93,68 L96,68 L96,89 L90,89 L90,83 L87,83 L87,89 Z M87,71 L87,77 L90,77 L90,71 L87,71 Z M66,65 L66,68 L63,68 L63,86 L66,86 L66,89 L75,89 L75,86 L78,86 L78,80 L72,80 L72,83 L69,83 L69,71 L72,71 L72,74 L78,74 L78,68 L75,68 L75,65 L66,65 Z M219,59 L207,59 L207,17 L213,17 L213,11 L231,11 L231,17 L237,17 L237,59 L225,59 L225,47 L219,47 L219,59 Z M219,23 L219,35 L225,35 L225,23 L219,23 Z M201,59 L201,11 L189,11 L189,59 L201,59 Z M177,11 L177,17 L183,17 L183,53 L177,53 L177,59 L153,59 L153,11 L177,11 Z M171,47 L171,23 L165,23 L165,47 L171,47 Z M123,59 L147,59 L147,47 L129,47 L129,41 L147,41 L147,29 L129,29 L129,23 L147,23 L147,11 L123,11 L123,17 L117,17 L117,53 L123,53 L123,59 Z M75,59 L75,23 L81,23 L81,59 L93,59 L93,23 L99,23 L99,59 L111,59 L111,17 L105,17 L105,11 L63,11 L63,59 L75,59 Z" transform="translate(-63 -11)"/></svg></a>
+        <div class="md:pl-32">
+          <p class="mb-4 text-gray-600 text-sm md:text-base">HTML/CSS framework for case overlays on top of media cover art.</p>
+          <a href="https://github.com/craigerskine/media-cases" class="border-(t orange-300) px-8 py-2 bg-orange-500 text-white font-bold uppercase inline-flex items-center rounded shadow transition hover:(border-orange-400 bg-orange-600) ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" viewBox="0 0 150 24" role="img">
+              <title>Download</title>
+              <path fill="currentColor" d="M12,0 L0,0 L0,24 L12,24 L12,21 L15,21 L15,3 L12,3 L12,0 Z M9,18 L6,18 L6,6 L9,6 L9,18 Z M21,24 L30,24 L30,21 L33,21 L33,3 L30,3 L30,0 L21,0 L21,3 L18,3 L18,21 L21,21 L21,24 Z M24,6 L27,6 L27,18 L24,18 L24,6 Z M54,0 L54,18 L51,18 L51,0 L45,0 L45,18 L42,18 L42,0 L36,0 L36,24 L54,24 L54,21 L57,21 L57,18 L60,18 L60,0 L54,0 Z M75,0 L63,0 L63,24 L69,24 L69,6 L72,6 L72,24 L78,24 L78,3 L75,3 L75,0 Z M87,18 L87,0 L81,0 L81,21 L84,21 L84,24 L96,24 L96,18 L87,18 Z M102,24 L111,24 L111,21 L114,21 L114,3 L111,3 L111,0 L102,0 L102,3 L99,3 L99,21 L102,21 L102,24 Z M105,6 L108,6 L108,18 L105,18 L105,6 Z M123,24 L123,18 L126,18 L126,24 L132,24 L132,3 L129,3 L129,0 L120,0 L120,3 L117,3 L117,24 L123,24 Z M123,6 L126,6 L126,12 L123,12 L123,6 Z M147,0 L135,0 L135,24 L147,24 L147,21 L150,21 L150,3 L147,3 L147,0 Z M144,18 L141,18 L141,6 L144,6 L144,18 Z"/>
+            </svg>
+            <iconify-icon icon="mdi:github-face" class="iconify ml-2 text-xl" noobserver></iconify-icon>
+          </a>
+        </div>
+      </header>
+      <main class="bg-gray-800 grow">
+
+        <section class="mx-auto py-8 container">
+          <!-- media -->
+          <template x-for="(item, index) in covers" hidden>
+            <article>
+              <h2 class="mb-8 text-(gray-300 xl) font-bold flex items-center justify-center gap-4 [&::before,&::after]:(content-[''] border-(t-2 dashed orange-500/25) h-0 grow))" x-text="item.title"></h2>
+              <ul class="mb-16 grid-(& cols-[repeat(auto-fit,minmax(150px,max(150px)))]) items-end justify-center gap-4 text-center">
+                <template x-for="(cover, index) in item.items" hidden>
+                  <li>
+                    <a href="#" class="media-case shadow-lg rounded-sm" :class="'media-'+ cover.slug[0]">
+                      <img :src="'holder.js/'+ cover.width +'x'+ cover.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="cover.title +' Cover'" />
+                    </a>
+                    <div class="mt-1">
+                      <template x-if="item.title !== 'Misc'" hidden>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="box-logo-img mx-auto py-2 w-2/3 h-auto fill-current">
+                          <title x-text="item.title +' - '+ cover.title"></title>
+                          <use :href="'dist/img/logos/platforms.svg?v=2025#logo-'+ slugify(cover.title)"></use>
+                        </svg>
+                      </template>
+                      <template x-if="item.title === 'Misc'" hidden>
+                        <h3 class="text-sm" x-text="cover.title"></h3>
+                      </template>
+                      <template x-for="i in cover.slug" hidden>
+                        <code x-text="i"></code>
+                      </template>
+                    </div>
+                  </li>
+                </template>
+              </ul>
+            </article>
+          </template>
+          <!-- /media -->
+        </section>
+
+        <h2 class="p-8 bg-gray-900 text-gray-500 text-2xl uppercase flex justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="87" height="24" viewBox="0 0 87 24" role="img">
+            <title>Usage</title>
+            <path fill="currentColor" d="M3,24 L12,24 L12,21 L15,21 L15,0 L9,0 L9,18 L6,18 L6,0 L0,0 L0,21 L3,21 L3,24 Z M21,0 L21,3 L18,3 L18,12 L21,12 L21,15 L27,15 L27,18 L18,18 L18,24 L30,24 L30,21 L33,21 L33,12 L30,12 L30,9 L24,9 L24,6 L33,6 L33,0 L21,0 Z M42,24 L42,18 L45,18 L45,24 L51,24 L51,3 L48,3 L48,0 L39,0 L39,3 L36,3 L36,24 L42,24 Z M42,6 L45,6 L45,12 L42,12 L42,6 Z M57,24 L69,24 L69,9 L63,9 L63,18 L60,18 L60,6 L69,6 L69,0 L57,0 L57,3 L54,3 L54,21 L57,21 L57,24 Z M75,24 L75,21 L72,21 L72,3 L75,3 L75,0 L87,0 L87,6 L78,6 L78,9 L87,9 L87,15 L78,15 L78,18 L87,18 L87,24 L75,24 Z"/>
           </svg>
-          <i class="fa fa-fw fa-lg fa-github ml-2" aria-label="On GitHub"></i>
-        </a>
-      </div>
-    </header>
-    <main class="bg-gray-800">
-
-      <section class="mx-auto py-8 container">
-<!-- media -->
-        <ul class="ui flex flex-wrap items-end text-center" v-cloak>
-          <li v-for="(value, index) in cases" class="mb-8 w-1/3 md:w-1/6">
-            <a href="#" :class="['media-'+ value.slug[0], 'media-case shadow-lg rounded-sm']" :title="value.title">
-              <img :src="'holder.js/'+ value.width +'x'+ value.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="value.title +' Cover'" />
-            </a>
-            <small class="block">
-              {{value.title}}
-              <code v-for="i in value.slug" class="mx-1 px-1 py-px bg-black text-yellow-600 font-mono inline-block opacity-75 rounded-sm shadow">{{ i }}</code>
-            </small>
-          </li>
-        </ul>
-<!-- /media -->
-      </section>
-
-      <h2 class="p-8 bg-gray-900 text-gray-500 text-2xl uppercase flex justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="24" viewBox="0 0 87 24" role="img">
-          <title>Usage</title>
-          <path fill="currentColor" d="M3,24 L12,24 L12,21 L15,21 L15,0 L9,0 L9,18 L6,18 L6,0 L0,0 L0,21 L3,21 L3,24 Z M21,0 L21,3 L18,3 L18,12 L21,12 L21,15 L27,15 L27,18 L18,18 L18,24 L30,24 L30,21 L33,21 L33,12 L30,12 L30,9 L24,9 L24,6 L33,6 L33,0 L21,0 Z M42,24 L42,18 L45,18 L45,24 L51,24 L51,3 L48,3 L48,0 L39,0 L39,3 L36,3 L36,24 L42,24 Z M42,6 L45,6 L45,12 L42,12 L42,6 Z M57,24 L69,24 L69,9 L63,9 L63,18 L60,18 L60,6 L69,6 L69,0 L57,0 L57,3 L54,3 L54,21 L57,21 L57,24 Z M75,24 L75,21 L72,21 L72,3 L75,3 L75,0 L87,0 L87,6 L78,6 L78,9 L87,9 L87,15 L78,15 L78,18 L87,18 L87,24 L75,24 Z"/>
-        </svg>
-      </h2>
-      <section class="mx-auto p-8 container">
-        <ol class="space-y-5">
-          <li class="flex">
-            <i class="w-10 h-10 ring(1 white opacity-10) not-italic flex-none flex items-center justify-center rounded-full">1</i>
-            <div class="pl-5 min-w-0 flex-1">
-              <h4 class="mb-2 font-bold">Include the CSS:</h4>
-              <div class="mb-4 p-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
-                <pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/media.css&quot; /&gt;</pre>
+        </h2>
+        <section class="mx-auto p-8 container">
+          <ol class="space-y-5">
+            <li class="flex">
+              <i class="w-10 h-10 ring-(1 current) not-italic flex-none flex items-center justify-center rounded-full">1</i>
+              <div class="pl-5 min-w-0 flex-1">
+                <h4 class="mb-2 text-gray-300 font-bold">Include the CSS: <small class="text-xs font-normal block opacity-60"><b>NOTE:</b> inside your <code>&lt;/head&gt;</code></small></h4>
+                <div class="mb-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
+                  <pre><code>&lt;link rel="stylesheet" href="css/media.css" /&gt;</code></pre>
+                </div>
               </div>
-            </div>
-          </li>
-          <li class="flex">
-            <i class="w-10 h-10 ring(1 white opacity-10) not-italic flex-none flex items-center justify-center rounded-full">2</i>
-            <div class="pl-5 min-w-0 flex-1">
-              <h4 class="mb-2 font-bold">Sample Markup: <small class="font-normal block"><b>NOTE:</b> replace <code class="px-1 py-px bg-black text-yellow-400 font-mono inline-block opacity-75 rounded-sm shadow">ps4</code> with whatever case you want and <code class="px-1 py-px bg-black text-yellow-400 font-mono inline-block opacity-75 rounded-sm shadow">cover-art.jpg</code> with the path to your own hosted cover artwork. <br /> Also, you can use your own CSS to style the overall layout, in the above demo I used <a href="https://twind.dev/" class="text-gray-400 hover:text-white focus:text-white transition duration-300">Twind</a>.</small></h4>
-              <div class="mb-4 p-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
-                <pre>&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;media-case media-<b class="text-yellow-400">ps4</b>&quot;&gt;&lt;img src=&quot;<b class="text-yellow-400">cover-art.jpg</b>&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
-  ...
-&lt;/ul&gt;</pre>
+            </li>
+            <li class="flex">
+              <i class="w-10 h-10 ring-(1 current) not-italic flex-none flex items-center justify-center rounded-full">2</i>
+              <div class="pl-5 min-w-0 flex-1">
+                <h4 class="mb-2 text-gray-300 font-bold">Sample Markup: <small class="text-xs font-normal block opacity-60"><b>NOTE:</b> replace <code>ps4</code> with whatever case you want and <code>cover-art.jpg</code> with the path to your own hosted cover artwork. <br /> Also, you can use your own CSS to style the overall layout, in the above demo I used <a href="https://twind.style/" class="text-gray-400 hover:text-white transition duration-300">Twind/Tailwind</a>.</small></h4>
+                <div class="mb-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
+                  <pre><code>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="#" class="media-case media-ps4"&gt; &lt;!-- change ps4 to your desired case --&gt;
+      &lt;img src="cover-art.jpg" alt="..." /&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;!-- add more entries --&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
               </div>
-            </div>
-          </li>
-        </ol>
-      </section>
-    </main>
-    <footer class="p-8 bg-gray-900 text-gray-700 text-xs font-bold uppercase text-right">
-        Made with
-        <svg xmlns="http://www.w3.org/2000/svg" class="-mt-1 mx-1 text-red-500 inline-block stroke-current" width="16" height="12" viewBox="0 0 16 12" role="img" aria-labelledby="footer-heart">
-          <title id="footer-heart">Love</title>
-          <polygon fill="transparent" points="8 4 12 0 16 4 8 12 0 4 4 0"></polygon>
-        </svg>
-        , Design &amp; concept by <a href="http://craigerskine.com/" class="mx-1 text-gray-400 hover:text-gray-300 focus:text-gray-300">Craig Erskine</a>
-    </footer>
+            </li>
+          </ol>
+        </section>
+      </main>
+      <footer class="p-8 text-gray-600 text-xs font-bold uppercase text-right shrink-0">
+          Made with
+          <svg xmlns="http://www.w3.org/2000/svg" class="-mt-1 mx-1 text-red-500 inline-block stroke-current" width="16" height="12" viewBox="0 0 16 12" role="img" aria-labelledby="footer-heart">
+            <title id="footer-heart">Love</title>
+            <polygon fill="transparent" points="8 4 12 0 16 4 8 12 0 4 4 0"></polygon>
+          </svg>
+          , Design &amp; concept by <a href="http://craigerskine.com/" class="mx-1 text-gray-400 transition hover:text-gray-300">Craig Erskine</a>
+      </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.js,npm/twind/observe/observe.umd.js,npm/twind/colors/colors.umd.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.global.prod.js"></script>
     <script src="https://unpkg.com/holderjs"></script>
 
-    <script>
-      // data
-      Vue.createApp({
-        data() {
-          return {
-            cases: [
-              { title: 'PS5/4', slug: ['ps5', 'ps4'], width: '204', height: '240' },
-              { title: 'PS3', slug: ['ps3'], width: '212', height: '232' },
-              { title: 'PS2', slug: ['dvd'], width: '204', height: '280' },
-              { title: 'PSone', slug: ['cd'], width: '192', height: '196' },
-              { title: 'PS Vita', slug: ['psv'], width: '170', height: '216' },
-              { title: 'PSP', slug: ['psp'], width: '168', height: '260' },
-              { title: 'Switch', slug: ['switch'], width: '156', height: '248' },
-              { title: 'Wii U', slug: ['wiiu'], width: '208', height: '280' },
-              { title: 'Wii', slug: ['wii'], width: '204', height: '280' },
-              { title: 'Gamecube', slug: ['dvd'], width: '204', height: '280' },
-              { title: '3DS', slug: ['n3ds'], width: '210', height: '168' },
-              { title: 'DS', slug: ['nds'], width: '204', height: '180' },
-              { title: 'XBOX X/ONE', slug: ['xbx', 'xbone'], width: '212', height: '220' },
-              { title: 'XBOX 360', slug: ['xb360'], width: '204', height: '280' },
-              { title: 'XBOX', slug: ['xb'], width: '204', height: '280' },
-              { title: 'Dreamcast', slug: ['cd'], width: '192', height: '196' },
-              { title: 'Sega CD/Saturn', slug: ['cd-tl'], width: '192', height: '304' },
-              { title: 'TurboGrafx/CD', slug: ['cd'], width: '192', height: '196' },
-              { title: 'Box', slug: ['box'], width: '224', height: '224' },
-              { title: 'Box Wide', slug: ['box-wd'], width: '280', height: '204' },
-              { title: 'Box Medium', slug: ['box-md'], width: '204', height: '240' },
-              { title: 'Box Small', slug: ['box-sm'], width: '204', height: '204' },
-              { title: 'Box Tall', slug: ['box-tl'], width: '204', height: '280' }
-            ],
-          }
-        }
-      }).mount('.ui');;
+    <script type="module">
+      // icons
+      import 'https://esm.run/iconify-icon';
 
-      twind.setup({
-        mode: "silent",
+      // highlight.js
+      import hljs from 'https://esm.run/highlight.js';
+
+      // alpine
+      import Alpine from 'https://esm.run/alpinejs';
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('app', () => ({
+          covers: [
+            {
+              title: 'Sony',
+              items: [
+                { title: 'Playstation 5', slug: ['ps5', 'ps4'], width: '204', height: '240' },
+                { title: 'Playstation 3', slug: ['ps3'], width: '212', height: '232' },
+                { title: 'Playstation 2', slug: ['dvd'], width: '204', height: '280' },
+                { title: 'Playstation', slug: ['cd'], width: '192', height: '196' },
+                { title: 'Playstation Vita', slug: ['psv'], width: '170', height: '216' },
+                { title: 'Playstation Portable', slug: ['psp'], width: '168', height: '260' },
+              ]
+            },
+            {
+              title: 'Nintendo',
+              items: [
+                { title: 'Switch 2', slug: ['switch-2'], width: '156', height: '248' },
+                { title: 'Switch', slug: ['switch'], width: '156', height: '248' },
+                { title: 'Wii U', slug: ['wiiu'], width: '208', height: '280' },
+                { title: 'Wii', slug: ['wii'], width: '204', height: '280' },
+                { title: 'Gamecube', slug: ['dvd'], width: '204', height: '280' },
+                { title: '3DS', slug: ['n3ds'], width: '210', height: '168' },
+                { title: 'DS', slug: ['nds'], width: '204', height: '180' },
+              ]
+            },
+            {
+              title: 'Microsoft',
+              items: [
+                { title: 'XBOX Series X|S', slug: ['xbx', 'xbone'], width: '212', height: '220' },
+                { title: 'XBOX 360', slug: ['xb360'], width: '204', height: '280' },
+                { title: 'XBOX', slug: ['xb'], width: '204', height: '280' },
+              ]
+            },
+            {
+              title: 'Sega',
+              items: [
+                { title: 'Dreamcast', slug: ['cd'], width: '192', height: '196' },
+                { title: 'Sega CD', slug: ['cd-tl'], width: '192', height: '304' },
+              ]
+            },
+            {
+              title: 'Misc',
+              items: [
+                { title: 'DVD', slug: ['dvd'], width: '204', height: '280' },
+                { title: 'CD', slug: ['cd'], width: '192', height: '196' },
+                { title: 'Box', slug: ['box'], width: '224', height: '224' },
+                { title: 'Box Wide', slug: ['box-wd'], width: '280', height: '204' },
+                { title: 'Box Medium', slug: ['box-md'], width: '204', height: '240' },
+                { title: 'Box Small', slug: ['box-sm'], width: '204', height: '204' },
+                { title: 'Box Tall', slug: ['box-tl'], width: '204', height: '280' }
+              ]
+            },
+          ],
+          slugify(text) {
+            return text?.toString()
+              .toLowerCase()
+              .normalize('NFKD')
+              .trim()
+              .toLowerCase()
+              .replace(/[^\w\-]+/g, '-')
+              .replace(/\s+/g, '-')
+              .replace(/-+/g, '-')
+          },
+        }));
+        Alpine.effect(() => {
+          document.querySelectorAll('pre code:not([data-hljs])').forEach((el) => {
+            hljs.highlightElement(el);
+            el.dataset.hljs = 'true';
+          });
+        });
+      });
+      window.Alpine = Alpine;
+      Alpine.start();
+
+      // twind
+      import { install, injectGlobal } from 'https://esm.run/@twind/core';
+      import presetAutoprefix from 'https://esm.run/@twind/preset-autoprefix';
+      import presetTailwind from 'https://esm.run/@twind/preset-tailwind';
+      install({
+        presets: [presetAutoprefix(), presetTailwind()],
+        darkMode: 'class',
+        hash: false,
         theme: {
           extend: {
-            colors: {
-              //gray: twindColors.gray,
-            },
-            fontFamily: (theme) => ({
-              sans: 'Inter,'+ theme('fontFamily.sans'),
+            colors: ({ theme }) => ({
+            }),
+            fontFamily: ({ theme }) => ({
+              sans: ['Inter', ...theme('fontFamily.sans')],
             }),
           },
         },
-      })
-      twind.tw(() => ({
-        '@global': {
-          ':root [v-cloak]': { '@apply': 'hidden', },
+        rules: [
+          ['text-wrap-(unset|wrap|nowrap|balance|pretty)', 'textWrap'],
+          ['bg-gradient-radial', 'bg-[radial-gradient(closest-side,var(--tw-gradient-stops))]'],
+          ['bg-gradient-conic', 'bg-[conic-gradient(from_180deg,var(--tw-gradient-stops))]'],
+          ['container-', ({ $$ }) => `mx-auto w-full max-w-${$$}`],
+        ],
+      });
+      // global css
+      injectGlobal`
+        @layer base {
+          hr { @apply border-gray-500/25; }
+          code:not(pre code) { @apply mx-0.5 px-1.5 py-px bg-black/50 text-(orange-400 xs) font-mono inline-block rounded-sm; }
+          .hljs { @apply bg-transparent; }
+          [x-cloak] { @apply hidden; }
         }
-      }))
-      twindObserve.observe(document.documentElement);
-      document.documentElement.removeAttribute('hidden');
+      `
     </script>
 
   </body>

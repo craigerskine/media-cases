@@ -19,7 +19,7 @@ Description: Media Cases
 /* 104x140 */
 .media-wiiu { padding: 7px 6px 7px 0; width: 110px; }
 /* 78x124 */
-.media-switch { padding: 4px 4px 4px 0; width: 83px; height: 134px; }
+.media-switch,.media-switch-2 { padding: 4px 4px 4px 0; width: 83px; height: 134px; }
 /* 105x94 */
 .media-n3ds { padding: 5px 5px 5px 0; height: 104px; }
 /* 102x90 */
@@ -46,6 +46,7 @@ Description: Media Cases
 .media-xbx:after,.media-xbone:after { background-image: url(../img/media/cases/ms-xbx.png); }
 .media-xb360:after { background-image: url(../img/media/cases/ms-xbox360.png); }
 .media-xb:after { background-image: url(../img/media/cases/ms-xbox.png); }
+.media-switch-2:after { background-image: url(../img/media/cases/n-switch-2.png); }
 .media-switch:after { background-image: url(../img/media/cases/n-switch.png); }
 .media-wiiu:after { background-image: url(../img/media/cases/n-wiiu.png); }
 .media-wii:after { background-image: url(../img/media/cases/n-wii.png); }
