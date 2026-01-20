@@ -33,18 +33,28 @@
           <!-- media -->
           <template x-for="(item, index) in covers" hidden>
             <article>
-              <h2 class="mb-8 text-(gray-300 xl) font-bold flex items-center justify-center gap-4 [&::before,&::after]:(content-[''] border-(t-2 dashed orange-500/25) h-0 grow))" x-text="item.title"></h2>
+              <h2 class="mb-8 text-(gray-300 xl) font-bold flex items-center justify-center gap-4 [&::before,&::after]:(content-[''] border-(t-2 dashed gray-500/25) h-0 grow)">
+                <template x-if="item.title !== 'Misc'" hidden>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="company-logo-img mx-auto w-auto h-8 fill-current text-gray-500">
+                    <title x-text="item.title"></title>
+                    <use :href="'dist/img/logos/company.svg?v=2025#logo-'+ slugify(item.title)"></use>
+                  </svg>
+                </template>
+                <template x-if="item.title === 'Misc'" hidden>
+                  <span x-text="item.title"></span>
+                </template>
+              </h2>
               <ul class="mb-16 grid-(& cols-[repeat(auto-fit,minmax(150px,max(150px)))]) items-end justify-center gap-4 text-center">
                 <template x-for="(cover, index) in item.items" hidden>
                   <li>
                     <a href="#" class="media-case shadow-lg rounded-sm" :class="'media-'+ cover.slug[0]">
                       <img :src="'holder.js/'+ cover.width +'x'+ cover.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="cover.title +' Cover'" />
                     </a>
-                    <div class="mt-1">
+                    <div>
                       <template x-if="item.title !== 'Misc'" hidden>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="box-logo-img mx-auto py-2 w-2/3 h-auto fill-current">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="box-logo-img my-2 mx-auto w-auto h-6 fill-current">
                           <title x-text="item.title +' - '+ cover.title"></title>
-                          <use :href="'dist/img/logos/platforms.svg?v=2025#logo-'+ slugify(cover.title)"></use>
+                          <use :href="'dist/img/logos/platform.svg?v=2025#logo-'+ slugify(cover.title)"></use>
                         </svg>
                       </template>
                       <template x-if="item.title === 'Misc'" hidden>
