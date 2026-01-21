@@ -33,7 +33,7 @@
           <!-- media -->
           <template x-for="(item, index) in covers" hidden>
             <article>
-              <h2 class="mb-8 text-(gray-300 xl) font-bold flex items-center justify-center gap-4 [&::before,&::after]:(content-[''] border-(t-2 dashed gray-500/25) h-0 grow)">
+              <h2 class="mb-8 text-(gray-300 xl) font-bold flex items-center justify-center gap-4 [&::before,&::after]:(content-[''] h-0.5 from-transparent to-white/10 grow) [&::before]:bg-gradient-to-r [&::after]:bg-gradient-to-l">
                 <template x-if="item.title !== 'Misc'" hidden>
                   <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="company-logo-img mx-auto w-auto h-8 fill-current text-gray-500">
                     <title x-text="item.title"></title>
@@ -47,7 +47,7 @@
               <ul class="mb-16 grid-(& cols-[repeat(auto-fit,minmax(150px,max(150px)))]) items-end justify-center gap-4 text-center">
                 <template x-for="(cover, index) in item.items" hidden>
                   <li>
-                    <a href="#" class="media-case shadow-lg rounded-sm" :class="'media-'+ cover.slug[0]">
+                    <a href="#" class="media-case shadow-lg" :class="'media-'+ cover.slug[0]">
                       <img :src="'holder.js/'+ cover.width +'x'+ cover.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="cover.title +' Cover'" />
                     </a>
                     <div>
@@ -135,7 +135,8 @@
             {
               title: 'Sony',
               items: [
-                { title: 'Playstation 5', slug: ['ps5', 'ps4'], width: '204', height: '240' },
+                { title: 'Playstation 5', slug: ['ps5'], width: '204', height: '240' },
+                { title: 'Playstation 4', slug: ['ps4'], width: '204', height: '240' },
                 { title: 'Playstation 3', slug: ['ps3'], width: '212', height: '232' },
                 { title: 'Playstation 2', slug: ['dvd'], width: '204', height: '280' },
                 { title: 'Playstation', slug: ['cd'], width: '192', height: '196' },
@@ -148,17 +149,18 @@
               items: [
                 { title: 'Switch 2', slug: ['switch-2'], width: '156', height: '248' },
                 { title: 'Switch', slug: ['switch'], width: '156', height: '248' },
-                { title: 'Wii U', slug: ['wiiu'], width: '208', height: '280' },
+                { title: 'Wii U', slug: ['wiiu'], width: '204', height: '280' },
                 { title: 'Wii', slug: ['wii'], width: '204', height: '280' },
                 { title: 'Gamecube', slug: ['dvd'], width: '204', height: '280' },
-                { title: '3DS', slug: ['n3ds'], width: '210', height: '168' },
-                { title: 'DS', slug: ['nds'], width: '204', height: '180' },
+                { title: '3DS', slug: ['3ds'], width: '210', height: '188' },
+                { title: 'DS', slug: ['ds'], width: '204', height: '180' },
               ]
             },
             {
               title: 'Microsoft',
               items: [
-                { title: 'XBOX Series X|S', slug: ['xbx', 'xbone'], width: '212', height: '220' },
+                { title: 'XBOX Series X|S', slug: ['xbx'], width: '212', height: '220' },
+                { title: 'XBOX One', slug: ['xbone'], width: '212', height: '220' },
                 { title: 'XBOX 360', slug: ['xb360'], width: '204', height: '280' },
                 { title: 'XBOX', slug: ['xb'], width: '204', height: '280' },
               ]
@@ -222,16 +224,12 @@
           },
         },
         rules: [
-          ['text-wrap-(unset|wrap|nowrap|balance|pretty)', 'textWrap'],
-          ['bg-gradient-radial', 'bg-[radial-gradient(closest-side,var(--tw-gradient-stops))]'],
-          ['bg-gradient-conic', 'bg-[conic-gradient(from_180deg,var(--tw-gradient-stops))]'],
           ['container-', ({ $$ }) => `mx-auto w-full max-w-${$$}`],
         ],
       });
       // global css
       injectGlobal`
         @layer base {
-          hr { @apply border-gray-500/25; }
           code:not(pre code) { @apply mx-0.5 px-1.5 py-px bg-black/50 text-(orange-400 xs) font-mono inline-block rounded-sm; }
           .hljs { @apply bg-transparent; }
           [x-cloak] { @apply hidden; }

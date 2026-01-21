@@ -1,63 +1,92 @@
 /*
-Author: Craig Erskine
-Description: Media Cases
+ author: https://craigerskine.com
+ description: media case overlays
 */
 
+/* tokens */
+:root {
+  --color-default: #434341;
+  --color-switch-2: #E70010;
+  --color-wiiu: #43CCE8;
+  --color-wii: #EEEEEE;
+  --color-3ds: #EEEEEE;
+  --color-xbx: #027C00;
+  --color-xbone: var(--color-xbx);
+  --color-xb360: #73E336;
+  --color-xb: #6AA948;
+  --color-ps5: #115CDD;
+  --color-ps4: var(--color-ps5);
+  --color-psv: #0068FF;
+}
+
 /* media */
-.media-case { display: inline-block; text-decoration: none; position: relative; transition: all .15s cubic-bezier(0,1,0.5,1.5); }
-.media-case:hover,.media-case:focus { transform: translate(0, -8px); }
-.media-case img { width: 100%; height: 100%; }
+.media-case { background: var(--color-default); display: inline-block; text-decoration: none; position: relative; border-radius: 0.1875rem; transition: all .15s cubic-bezier(0,1,0.5,1.5); }
+.media-case:hover,.media-case:focus { transform: translate(0, -0.5rem); }
+.media-case img { width: 100%; height: 100%; border-radius: 0 0.125rem 0.125rem 0; }
 
-/* 102x140 */
+/* colors */
+.media-switch-2 { background: var(--color-switch-2); }
+.media-wiiu { background: var(--color-wiiu); }
+.media-wii { background: var(--color-wii); }
+.media-3ds { background: var(--color-3ds); }
+.media-xbx { background: var(--color-xbx); }
+.media-xbone { background: var(--color-xbone); }
+.media-xb360 { background: var(--color-xb360); }
+.media-xb { background: var(--color-xb); }
+.media-ps5 { background: var(--color-ps5); }
+.media-ps4 { background: var(--color-ps4); }
+.media-psv { background: var(--color-psv); }
+
+/* sizes */
+/* 204x280 */
 .media-case { padding: 7px 8px 7px 0; width: 110px; height: 154px; }
-/* 96x98 */
-.media-cd { padding: 2px 4px 2px 12px; width: 112px; height: 102px; }
-/* 96x152 */
-.media-cd-tl { padding: 2px 4px 2px 12px; width: 112px; height: 156px; }
-/* 106x110 */
-.media-xbx,.media-xbone { padding: 17px 4px 7px 0; height: 134px; }
-/* 104x140 */
-.media-wiiu { padding: 7px 6px 7px 0; width: 110px; }
-/* 78x124 */
-.media-switch,.media-switch-2 { padding: 4px 4px 4px 0; width: 83px; height: 134px; }
-/* 105x94 */
-.media-n3ds { padding: 5px 5px 5px 0; height: 104px; }
-/* 102x90 */
-.media-nds { height: 104px; }
-/* 102x120 */
+/* 204x240 */
 .media-ps5,.media-ps4 { padding: 7px 8px 7px 0; height: 134px; }
-/* 106x116 */
+/* 212x232 */
 .media-ps3 { padding: 14px 4px 4px 0; width: 110px; height: 134px; }
-/* 85x108 */
+/* 170x216 */
 .media-psv { padding: 5px 5px 5px 0; width: 90px; height: 118px; }
-/* 84x130 */
+/* 168x260 */
 .media-psp { padding: 4px 4px 4px 0; width: 88px; height: 138px; }
-
+/* 78x124 */
+.media-switch-2,.media-switch { padding: 4px 4px 4px 0; width: 83px; height: 134px; }
+/* 210x188 */
+.media-3ds { padding: 5px 5px 5px 0; height: 104px; }
+/* 204x180 */
+.media-ds { height: 104px; }
+/* 212x220 */
+.media-xbx,.media-xbone { padding: 17px 4px 7px 0; height: 134px; }
+/* 192x196 */
+.media-cd { padding: 2px 4px 2px 12px; width: 112px; height: 102px; }
+/* 192x304 */
+.media-cd-tl { padding: 2px 4px 2px 12px; width: 112px; height: 156px; }
+/* 224x224 */
 .media-box { padding: 0; width: 112px; height: 112px; border-radius: 2px; }
+/* 280x204 */
 .media-box-wd { padding: 0; width: 140px; height: 102px; border-radius: 2px; }
+/* 204x240 */
 .media-box-md { padding: 0; width: 102px; height: 120px; border-radius: 2px; }
+/* 204x204 */
 .media-box-sm { padding: 0; width: 102px; height: 102px; border-radius: 2px; }
+/* 204x280 */
 .media-box-tl { padding: 0; width: 102px; height: 140px; border-radius: 2px; }
 
 /* cases */
-.media-case:after { width: 100%; height: 100%; background: none no-repeat 0 0; content: ""; position: absolute; top: 0; left: 0; }
-.media-dvd:after { background-image: url(../img/media/cases/dvd.png); }
-.media-cd:after { background-image: url(../img/media/cases/cd.png); }
-.media-xbx:after,.media-xbone:after { background-image: url(../img/media/cases/ms-xbx.png); }
-.media-xb360:after { background-image: url(../img/media/cases/ms-xbox360.png); }
-.media-xb:after { background-image: url(../img/media/cases/ms-xbox.png); }
-.media-switch-2:after { background-image: url(../img/media/cases/n-switch-2.png); }
-.media-switch:after { background-image: url(../img/media/cases/n-switch.png); }
-.media-wiiu:after { background-image: url(../img/media/cases/n-wiiu.png); }
-.media-wii:after { background-image: url(../img/media/cases/n-wii.png); }
-.media-n3ds:after { background-image: url(../img/media/cases/n-3ds.png); }
-.media-nds:after { background-image: url(../img/media/cases/n-ds.png); }
-.media-cd-tl:after { background-image: url(../img/media/cases/sega-cd.png); }
-.media-ps5:after,.media-ps4:after { background-image: url(../img/media/cases/sony-ps4.png); }
+.media-case:after { width: 100%; height: 100%; background: url(../img/media/cases/case.png) no-repeat 0 0; content: ""; position: absolute; top: 0; left: 0; }
+/* sony */
+.media-ps5:after,.media-ps4:after { background-image: url(../img/media/cases/sony-ps5.png); }
 .media-ps3:after { background-image: url(../img/media/cases/sony-ps3.png); }
 .media-psv:after { background-image: url(../img/media/cases/sony-psv.png); }
 .media-psp:after { background-image: url(../img/media/cases/sony-psp.png); }
-
+/* nintendo */
+.media-switch-2:after { background-image: url(../img/media/cases/n-switch-2.png); }
+.media-switch:after { background-image: url(../img/media/cases/n-switch.png); }
+.media-3ds:after,.media-ds:after { background-image: url(../img/media/cases/case-sm.png); }
+/* microsoft */
+.media-xbx:after,.media-xbone:after { background-image: url(../img/media/cases/ms-xbx.png); }
+/* misc */
+.media-cd:after { background-image: url(../img/media/cases/cd.png); }
+.media-cd-tl:after { background-image: url(../img/media/cases/cd-tl.png); }
 .media-box:after { background-image: url(../img/media/cases/box.png); }
 .media-box-wd:after { background-image: url(../img/media/cases/box-wd.png); }
 .media-box-md:after { background-image: url(../img/media/cases/box-md.png); }
