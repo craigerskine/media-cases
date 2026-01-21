@@ -47,7 +47,7 @@
               <ul class="mb-16 grid-(& cols-[repeat(auto-fit,minmax(150px,max(150px)))]) items-end justify-center gap-4 text-center">
                 <template x-for="(cover, index) in item.items" hidden>
                   <li>
-                    <a href="#" class="media-case shadow-lg" :class="'media-'+ cover.slug[0]">
+                    <a @click.prevent href="#" class="media-case shadow-lg" :class="'media-'+ cover.slug[0]">
                       <img :src="'holder.js/'+ cover.width +'x'+ cover.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="cover.title +' Cover'" />
                     </a>
                     <div>
