@@ -7,12 +7,12 @@
 :root {
   --color-default: #434341;
   --color-switch-2: #E70010;
-  --color-wiiu: #43CCE8;
+  --color-wii-u: #43CCE8;
   --color-wii: #EEEEEE;
   --color-3ds: #EEEEEE;
   --color-xbx: #027C00;
-  --color-xbone: var(--color-xbx);
-  --color-xb360: #73E336;
+  --color-xb-one: var(--color-xbx);
+  --color-xb-360: #73E336;
   --color-xb: #6AA948;
   --color-ps5: #115CDD;
   --color-ps4: var(--color-ps5);
@@ -24,14 +24,14 @@
 .media-case:hover,.media-case:focus { transform: translate(0, -0.5rem); }
 .media-case img { width: 100%; height: 100%; border-radius: 0 0.125rem 0.125rem 0; }
 
-/* colors */
+/* plastic colors */
 .media-switch-2 { background: var(--color-switch-2); }
-.media-wiiu { background: var(--color-wiiu); }
+.media-wii-u { background: var(--color-wii-u); }
 .media-wii { background: var(--color-wii); }
 .media-3ds { background: var(--color-3ds); }
-.media-xbx { background: var(--color-xbx); }
-.media-xbone { background: var(--color-xbone); }
-.media-xb360 { background: var(--color-xb360); }
+.media-xb-x { background: var(--color-xbx); }
+.media-xb-one { background: var(--color-xb-one); }
+.media-xb-360 { background: var(--color-xb-360); }
 .media-xb { background: var(--color-xb); }
 .media-ps5 { background: var(--color-ps5); }
 .media-ps4 { background: var(--color-ps4); }
@@ -48,14 +48,12 @@
 .media-psv { padding: 5px 5px 5px 0; width: 90px; height: 118px; }
 /* 168x260 */
 .media-psp { padding: 4px 4px 4px 0; width: 88px; height: 138px; }
-/* 78x124 */
+/* 156x248 */
 .media-switch-2,.media-switch { padding: 4px 4px 4px 0; width: 83px; height: 134px; }
-/* 210x188 */
-.media-3ds { padding: 5px 5px 5px 0; height: 104px; }
 /* 204x180 */
-.media-ds { height: 104px; }
+.media-3ds,.media-ds { height: 104px; }
 /* 212x220 */
-.media-xbx,.media-xbone { padding: 17px 4px 7px 0; height: 134px; }
+.media-xb-x,.media-xb-one { padding: 17px 4px 7px 0; height: 134px; }
 /* 192x196 */
 .media-cd { padding: 2px 4px 2px 12px; width: 112px; height: 102px; }
 /* 192x304 */
@@ -83,7 +81,7 @@
 .media-switch:after { background-image: url(../img/media/cases/n-switch.png); }
 .media-3ds:after,.media-ds:after { background-image: url(../img/media/cases/case-sm.png); }
 /* microsoft */
-.media-xbx:after,.media-xbone:after { background-image: url(../img/media/cases/ms-xbx.png); }
+.media-xb-x:after,.media-xb-one:after { background-image: url(../img/media/cases/ms-xbx.png); }
 /* misc */
 .media-cd:after { background-image: url(../img/media/cases/cd.png); }
 .media-cd-tl:after { background-image: url(../img/media/cases/cd-tl.png); }
