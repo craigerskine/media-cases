@@ -39,6 +39,9 @@
 .media-psv { background: var(--color-psv); }
 .media-blu-ray { background: var(--color-blu-ray); }
 
+/* tweaks */
+.media-cd,.media-cd-tl { border-radius: 0; & img { border-radius: 0; } }
+
 /* sizes */
 /* 204x280 */
 .media-case { padding: 7px 8px 7px 0; width: 110px; height: 154px; }
