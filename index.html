@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Media Cases - By Craig Erskine</title>
+    <title>Media Cases - by Craig Erskine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=overlays-content" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" />
@@ -34,35 +34,33 @@
           <template x-for="(item, index) in covers" hidden>
             <article>
               <h2 class="mb-8 text-(gray-300 xl) font-bold flex items-center justify-center gap-4 [&::before,&::after]:(content-[''] h-0.5 from-transparent to-white/10 grow) [&::before]:bg-gradient-to-r [&::after]:bg-gradient-to-l">
-                <template x-if="item.title !== 'Misc'" hidden>
+                <template x-if="!['Audio/Video', 'Boxes'].includes(item.title)" hidden>
                   <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="company-logo-img mx-auto w-auto h-8 fill-current text-gray-500">
                     <title x-text="item.title"></title>
                     <use :href="'dist/img/logos/company.svg?v=2025#logo-'+ slugify(item.title)"></use>
                   </svg>
                 </template>
-                <template x-if="item.title === 'Misc'" hidden>
+                <template x-if="['Audio/Video', 'Boxes'].includes(item.title)" hidden>
                   <span x-text="item.title"></span>
                 </template>
               </h2>
               <ul class="mb-16 grid-(& cols-[repeat(auto-fit,minmax(150px,max(150px)))]) items-end justify-center gap-4 text-center">
                 <template x-for="(cover, index) in item.items" hidden>
                   <li>
-                    <a @click.prevent href="#" class="media-case shadow-lg" :class="'media-'+ cover.slug[0]">
+                    <a @click.prevent href="#" class="media-case shadow-lg" :class="'media-'+ cover.slug">
                       <img :src="'holder.js/'+ cover.width +'x'+ cover.height +'?bg=1a202c&fg=a0aec0&outline=yes&auto=yes&size=18'" :alt="cover.title +' Cover'" />
                     </a>
                     <div>
-                      <template x-if="item.title !== 'Misc'" hidden>
+                      <template x-if="!['Audio/Video', 'Boxes'].includes(item.title)" hidden>
                         <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" role="img" class="box-logo-img my-2 mx-auto w-auto h-6 fill-current">
                           <title x-text="item.title +' - '+ cover.title"></title>
                           <use :href="'dist/img/logos/platform.svg?v=2025#logo-'+ slugify(cover.title)"></use>
                         </svg>
                       </template>
-                      <template x-if="item.title === 'Misc'" hidden>
+                      <template x-if="['Audio/Video', 'Boxes'].includes(item.title)" hidden>
                         <h3 class="text-sm" x-text="cover.title"></h3>
                       </template>
-                      <template x-for="i in cover.slug" hidden>
-                        <code x-text="i"></code>
-                      </template>
+                      <code x-text="cover.slug"></code>
                     </div>
                   </li>
                 </template>
@@ -135,54 +133,59 @@
             {
               title: 'Sony',
               items: [
-                { title: 'Playstation 5', slug: ['ps5'], width: '204', height: '240' },
-                { title: 'Playstation 4', slug: ['ps4'], width: '204', height: '240' },
-                { title: 'Playstation 3', slug: ['ps3'], width: '212', height: '232' },
-                { title: 'Playstation 2', slug: ['dvd'], width: '204', height: '280' },
-                { title: 'Playstation', slug: ['cd'], width: '192', height: '196' },
-                { title: 'Playstation Vita', slug: ['psv'], width: '170', height: '216' },
-                { title: 'Playstation Portable', slug: ['psp'], width: '168', height: '260' },
+                { title: 'Playstation 5', slug: 'ps5', width: '204', height: '240' },
+                { title: 'Playstation 4', slug: 'ps4', width: '204', height: '240' },
+                { title: 'Playstation 3', slug: 'ps3', width: '212', height: '232' },
+                { title: 'Playstation 2', slug: 'dvd', width: '204', height: '280' },
+                { title: 'Playstation', slug: 'cd', width: '192', height: '196' },
+                { title: 'Playstation Vita', slug: 'psv', width: '170', height: '216' },
+                { title: 'Playstation Portable', slug: 'psp', width: '168', height: '260' },
               ]
             },
             {
               title: 'Nintendo',
               items: [
-                { title: 'Switch 2', slug: ['switch-2'], width: '156', height: '248' },
-                { title: 'Switch', slug: ['switch'], width: '156', height: '248' },
-                { title: 'Wii U', slug: ['wii-u'], width: '204', height: '280' },
-                { title: 'Wii', slug: ['wii'], width: '204', height: '280' },
-                { title: 'Gamecube', slug: ['dvd'], width: '204', height: '280' },
-                { title: '3DS', slug: ['3ds'], width: '204', height: '180' },
-                { title: 'DS', slug: ['ds'], width: '204', height: '180' },
+                { title: 'Switch 2', slug: 'switch-2', width: '156', height: '248' },
+                { title: 'Switch', slug: 'switch', width: '156', height: '248' },
+                { title: 'Wii U', slug: 'wii-u', width: '204', height: '280' },
+                { title: 'Wii', slug: 'wii', width: '204', height: '280' },
+                { title: 'Gamecube', slug: 'dvd', width: '204', height: '280' },
+                { title: '3DS', slug: '3ds', width: '204', height: '180' },
+                { title: 'DS', slug: 'ds', width: '204', height: '180' },
               ]
             },
             {
               title: 'Microsoft',
               items: [
-                { title: 'XBOX Series X|S', slug: ['xb-x'], width: '212', height: '220' },
-                { title: 'XBOX One', slug: ['xb-one'], width: '212', height: '220' },
-                { title: 'XBOX 360', slug: ['xb-360'], width: '204', height: '280' },
-                { title: 'XBOX', slug: ['xb'], width: '204', height: '280' },
+                { title: 'XBOX Series X|S', slug: 'xb-x', width: '212', height: '220' },
+                { title: 'XBOX One', slug: 'xb-one', width: '212', height: '220' },
+                { title: 'XBOX 360', slug: 'xb-360', width: '204', height: '280' },
+                { title: 'XBOX', slug: 'xb', width: '204', height: '280' },
               ]
             },
             {
               title: 'Sega',
               items: [
-                { title: 'Dreamcast', slug: ['cd'], width: '192', height: '196' },
-                { title: 'Sega CD', slug: ['cd-tl'], width: '192', height: '304' },
+                { title: 'Dreamcast', slug: 'cd', width: '192', height: '196' },
+                { title: 'Sega CD', slug: 'cd-tl', width: '192', height: '304' },
               ]
             },
             {
-              title: 'Misc',
+              title: 'Audio/Video',
               items: [
-                { title: 'Blu-Ray', slug: ['blu-ray'], width: '212', height: '232' },  
-                { title: 'DVD', slug: ['dvd'], width: '204', height: '280' },
-                { title: 'CD', slug: ['cd'], width: '192', height: '196' },
-                { title: 'Box', slug: ['box'], width: '224', height: '224' },
-                { title: 'Box Wide', slug: ['box-wd'], width: '280', height: '204' },
-                { title: 'Box Medium', slug: ['box-md'], width: '204', height: '240' },
-                { title: 'Box Small', slug: ['box-sm'], width: '204', height: '204' },
-                { title: 'Box Tall', slug: ['box-tl'], width: '204', height: '280' }
+                { title: 'Blu-Ray', slug: 'blu-ray', width: '212', height: '232' },  
+                { title: 'DVD', slug: 'dvd', width: '204', height: '280' },
+                { title: 'CD', slug: 'cd', width: '192', height: '196' },
+              ]
+            },
+            {
+              title: 'Boxes',
+              items: [
+                { title: 'Box', slug: 'box', width: '224', height: '224' },
+                { title: 'Box Wide', slug: 'box-wd', width: '280', height: '204' },
+                { title: 'Box Medium', slug: 'box-md', width: '204', height: '240' },
+                { title: 'Box Small', slug: 'box-sm', width: '204', height: '204' },
+                { title: 'Box Tall', slug: 'box-tl', width: '204', height: '280' },
               ]
             },
           ],
