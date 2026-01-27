@@ -76,13 +76,13 @@
             <path fill="currentColor" d="M3,24 L12,24 L12,21 L15,21 L15,0 L9,0 L9,18 L6,18 L6,0 L0,0 L0,21 L3,21 L3,24 Z M21,0 L21,3 L18,3 L18,12 L21,12 L21,15 L27,15 L27,18 L18,18 L18,24 L30,24 L30,21 L33,21 L33,12 L30,12 L30,9 L24,9 L24,6 L33,6 L33,0 L21,0 Z M42,24 L42,18 L45,18 L45,24 L51,24 L51,3 L48,3 L48,0 L39,0 L39,3 L36,3 L36,24 L42,24 Z M42,6 L45,6 L45,12 L42,12 L42,6 Z M57,24 L69,24 L69,9 L63,9 L63,18 L60,18 L60,6 L69,6 L69,0 L57,0 L57,3 L54,3 L54,21 L57,21 L57,24 Z M75,24 L75,21 L72,21 L72,3 L75,3 L75,0 L87,0 L87,6 L78,6 L78,9 L87,9 L87,15 L78,15 L78,18 L87,18 L87,24 L75,24 Z"/>
           </svg>
         </h2>
-        <section class="mx-auto p-8 container">
+        <section class="mx-auto p-8 container-5xl">
           <ol class="space-y-5">
             <li class="flex">
               <i class="w-10 h-10 ring-(1 current) not-italic flex-none flex items-center justify-center rounded-full">1</i>
               <div class="pl-5 min-w-0 flex-1">
                 <h4 class="mb-2 text-gray-300 font-bold">Include the CSS: <small class="text-xs font-normal block opacity-60"><b>NOTE:</b> inside your <code>&lt;/head&gt;</code>. <br /> Also, you may need to edit the paths in this file to point to where you upload your case images (relative to your CSS location).</small></h4>
-                <div class="mb-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
+                <div class="code">
                   <pre><code>&lt;link rel="stylesheet" href="css/media.css" /&gt;</code></pre>
                 </div>
               </div>
@@ -91,7 +91,7 @@
               <i class="w-10 h-10 ring-(1 current) not-italic flex-none flex items-center justify-center rounded-full">2</i>
               <div class="pl-5 min-w-0 flex-1">
                 <h4 class="mb-2 text-gray-300 font-bold">Sample Markup: <small class="text-xs font-normal block opacity-60"><b>NOTE:</b> replace <code>ps4</code> with whatever case you want and <code>cover-art.jpg</code> with the path to your own hosted cover artwork. <br /> Also, you can use your own CSS to style the overall layout, in the above demo I used <a href="https://twind.style/" class="text-gray-400 hover:text-white transition duration-300">Twind/Tailwind</a>.</small></h4>
-                <div class="mb-4 w-full bg-black text-gray-300 block overflow-auto opacity-75 rounded shadow">
+                <div class="code">
                   <pre><code>&lt;ul&gt;
   &lt;li&gt;
     &lt;a href="#" class="media-case media-ps4"&gt; &lt;!-- change ps4 to your desired case --&gt;
@@ -235,6 +235,7 @@
       injectGlobal`
         @layer base {
           code:not(pre code) { @apply mx-0.5 px-1.5 py-px bg-black/50 text-(orange-400 xs) font-mono inline-block rounded-sm; }
+          .code { @apply pt-4 max-w-5xl bg-black/50 ring-(1 white/5) rounded-lg shadow-lg before:(w-3 h-3 block content-[''] opacity-50 rounded-full shadow-[1.4em_0,2.8em_0,4.2em_0]) [&_pre]:(p-0 block) [&_pre_code]:(px-5 block); }
           .hljs { @apply bg-transparent; }
           [x-cloak] { @apply hidden; }
         }
