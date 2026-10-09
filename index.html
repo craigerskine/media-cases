@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=overlays-content" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/media.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.css" />
     <style data-twind></style>
@@ -77,18 +77,24 @@
         <section class="mx-auto p-8 container-5xl">
           <ol class="space-y-5">
             <li class="flex">
-              <i class="w-10 h-10 ring-(1 current) not-italic flex-none flex items-center justify-center rounded-full">1</i>
+              <i class="w-10 h-10 outline-(& 1 dashed) [outline-color:color-mix(in_oklab,currentColor_50%,transparent)] not-italic flex-none flex items-center justify-center rounded-full">1</i>
               <div class="pl-5 min-w-0 flex-1">
-                <h4 class="mb-2 text-gray-300 font-bold">Include the CSS: <small class="text-xs font-normal block opacity-60"><b>NOTE:</b> inside your <code>&lt;/head&gt;</code>. <br /> Also, you may need to edit the paths in this file to point to where you upload your case images (relative to your CSS location).</small></h4>
+                <hgroup class="mb-2 space-y-2">
+                  <h4 class="text-gray-300 font-bold">Include the CSS:</h4>
+                  <p class="max-w-lg text-xs leading-5 text-wrap-balance"><b>NOTE:</b> inside <code>&lt;/head&gt;</code>. Also, you may need to edit the paths in this file to point to where you upload your case images (relative to your CSS location).</p>
+                </hgroup>
                 <div class="code">
                   <pre><code>&lt;link rel="stylesheet" href="css/media.css" /&gt;</code></pre>
                 </div>
               </div>
             </li>
             <li class="flex">
-              <i class="w-10 h-10 ring-(1 current) not-italic flex-none flex items-center justify-center rounded-full">2</i>
+              <i class="w-10 h-10 outline-(& 1 dashed) [outline-color:color-mix(in_oklab,currentColor_50%,transparent)] not-italic flex-none flex items-center justify-center rounded-full">2</i>
               <div class="pl-5 min-w-0 flex-1">
-                <h4 class="mb-2 text-gray-300 font-bold">Sample Markup: <small class="text-xs font-normal block opacity-60"><b>NOTE:</b> replace <code>ps4</code> with whatever case you want and <code>cover-art.jpg</code> with the path to your own hosted cover artwork. <br /> Also, you can use your own CSS to style the overall layout, in the above demo I used <a href="https://twind.style/" class="text-gray-400 hover:text-white transition duration-300">Twind/Tailwind</a>.</small></h4>
+                <hgroup class="mb-2 space-y-2">
+                  <h4 class="text-gray-300 font-bold">Sample Markup:</h4>
+                  <p class="max-w-lg text-xs leading-5 text-wrap-balance"><b>NOTE:</b> replace <code>ps4</code> with whatever case you want and <code>cover-art.jpg</code> with the path to your own hosted cover artwork. You can use your own CSS to style the overall layout.</p>
+                </hgroup>
                 <div class="code">
                   <pre><code>&lt;ul&gt;
   &lt;li&gt;
@@ -218,11 +224,12 @@
             colors: ({ theme }) => ({
             }),
             fontFamily: ({ theme }) => ({
-              mono: ['Roboto Mono', ...theme('fontFamily.mono')],
+              mono: ['JetBrains Mono', ...theme('fontFamily.mono')],
             }),
           },
         },
         rules: [
+          ['text-wrap-(unset|wrap|nowrap|balance|pretty)', 'textWrap'],
           ['container-', ({ $$ }) => `mx-auto w-full max-w-${$$}`],
         ],
       });
